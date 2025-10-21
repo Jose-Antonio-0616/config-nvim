@@ -1,0 +1,133 @@
+{
+  "coc.preferences.extensions": [
+    "coc-html",
+    "coc-css",
+    "coc-json",
+    "coc-tsserver",
+    "coc-emmet",
+    "coc-pyright",
+    "coc-sh"
+  ],
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.enablePreselect": true,
+  "suggest.maxCompleteItemCount": 20,
+  "suggest.autoTrigger": "always",
+  "suggest.minTriggerInputLength": 1,
+  "suggest.acceptSuggestionOnCommitCharacter": true,
+  "suggest.selection": "first",
+  "suggest.snippetIndicator": " ►",
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.enableCommitCharacter": true,
+  "suggest.acceptSuggestionOnEnter": "on",
+  "suggest.confirmCompletionTab": false,
+  "suggest.localityBonus": true,
+  "suggest.keepCompleteopt": false,
+  "suggest.pumFloatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "f"
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css", 
+    "markdown", 
+    "javascript", 
+    "javascriptreact",
+    "typescript", 
+    "typescriptreact",
+
+    "json", 
+    "python",
+    "php",
+    "cpp",
+    "c"
+  ],
+  
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.provider": "isort",
+  "python.defaultInterpreter": "python3",
+  "python.venvPath": "./",
+  "python.venvFolders": ["myenv", "venv", "env", ".venv", "virtualenv"],
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.extraPaths": [],
+  
+  "eslint.enable": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.options": {"extensions": [".js", ".jsx", ".ts", ".tsx"]},
+  
+  "tsserver.enable": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": true,
+  
+  "html.enable": true,
+  "html.suggest.html5": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
+    "vue-html": "html",
+    "markdown": "markdown"
+  },
+  
+  "css.enable": true,
+  "css.validate": true,
+  "less.validate": true,
+  "scss.validate": true,
+  
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "class[:]\s*['\"][^'\"]*['\"]|className[:]\s*['\"][^'\"]*['"]|tw[`]([^`]*)[`]`
+  ],
+  
+  "json.enable": true,
+  
+  "diagnostic.errorSign": "✗",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "💡",
+  "diagnostic.checkCurrentLine": true,
+  
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "bash"],
+      "ignoredRootPaths": ["~"]
+    },
+    "php": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense"
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
+    "sql": {
+      "command": "sql-language-server",
+      "args": ["up", "--method", "stdio"],
+      "filetypes": ["sql", "mysql", "pgsql"]
+    }
+  }
+}
