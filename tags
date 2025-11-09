@@ -1,0 +1,414 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/jose/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+**Advertencias de Deprecación**	README.md	/^### **Advertencias de Deprecación**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**Agregar plugins**	README.md	/^### **Agregar plugins**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔧 Personalización
+**Apariencia**	README.md	/^### **Apariencia**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Archivo y Salir**	KEYMAPS.md	/^### **Archivo y Salir**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Atajos Básicos**
+**Buffers**	KEYMAPS.md	/^### **Buffers**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Atajos Básicos**
+**Buffers**	README.md	/^### **Buffers**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Básicos**	README.md	/^### **Básicos**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Búsqueda**	README.md	/^### **Búsqueda**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🛠️ Configuraciones Destacadas
+**C++**	KEYMAPS.md	/^### **C++**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🌐 **Desarrollo Web**
+**Cambiar tema**	README.md	/^### **Cambiar tema**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔧 Personalización
+**Características**	README.md	/^### **Características**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐍 Entornos Virtuales de Python
+**CoC no funciona**	README.md	/^### **CoC no funciona**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**CoC.nvim (LSP)**	README.md	/^#### **CoC.nvim (LSP)**$/;"	t	subsection:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado""**Plugins**
+**CoC.nvim**	README.md	/^### **CoC.nvim**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🚀 Comandos Útiles
+**Comandos Principales**	KEYMAPS.md	/^### **Comandos Principales**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🤖 **Avante.nvim (AI Assistant)**
+**Comandos en Terminales**	KEYMAPS.md	/^### **Comandos en Terminales**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""💻 **Terminales Integrados**
+**Comandos por Defecto**	KEYMAPS.md	/^### **Comandos por Defecto**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""📚 **VimWiki**
+**Configuración Quick Switch**	KEYMAPS.md	/^### **Configuración Quick Switch**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Crear el Layout**	README.md	/^### **Crear el Layout**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""💻 Layout de Desarrollo (Como tu imagen)
+**Crear proyecto de ejemplo**	README.md	/^### **Crear proyecto de ejemplo**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐍 Entornos Virtuales de Python
+**Detección Automática**	README.md	/^### **Detección Automática**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐍 Entornos Virtuales de Python
+**Detección de Proyecto**	KEYMAPS.md	/^### **Detección de Proyecto**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎛️ **Funciones Especiales**
+**Diagnósticos**	KEYMAPS.md	/^### **Diagnósticos**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🔧 **CoC.nvim (LSP y Autocompletado)**
+**EasyMotion**	README.md	/^#### **EasyMotion**$/;"	t	subsection:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado""**Plugins**
+**Edición**	README.md	/^### **Edición**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Edición**	README.md	/^### **Edición**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🛠️ Configuraciones Destacadas
+**Ejecución**	KEYMAPS.md	/^### **Ejecución**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🐍 **Python y Django**
+**Emmet**	KEYMAPS.md	/^### **Emmet**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🌐 **Desarrollo Web**
+**Entornos Virtuales**	KEYMAPS.md	/^### **Entornos Virtuales**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🐍 **Python y Django**
+**Error 'Reflect.hasOwnMetadata is not a function'**	README.md	/^### **Error 'Reflect.hasOwnMetadata is not a function'**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**FZF no funciona**	README.md	/^### **FZF no funciona**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**FZF**	README.md	/^#### **FZF**$/;"	t	subsection:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado""**Plugins**
+**Flujo de Trabajo Típico**	README.md	/^### **Flujo de Trabajo Típico**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""💻 Layout de Desarrollo (Como tu imagen)
+**Formato**	KEYMAPS.md	/^### **Formato**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🔧 **CoC.nvim (LSP y Autocompletado)**
+**Fugitive**	KEYMAPS.md	/^### **Fugitive**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🔀 **Git (GitGutter + Fugitive)**
+**Gestión de Layouts**	KEYMAPS.md	/^### **Gestión de Layouts**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Git**	README.md	/^### **Git**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Git**	README.md	/^#### **Git**$/;"	t	subsection:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado""**Plugins**
+**GitGutter**	KEYMAPS.md	/^### **GitGutter**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🔀 **Git (GitGutter + Fugitive)**
+**Iconos no se muestran**	README.md	/^### **Iconos no se muestran**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**Interfaz**	README.md	/^### **Interfaz**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🛠️ Configuraciones Destacadas
+**JavaScript/React**	KEYMAPS.md	/^### **JavaScript\/React**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🌐 **Desarrollo Web**
+**LSP y Autocompletado**	README.md	/^### **LSP y Autocompletado**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Layout Personalizado**	KEYMAPS.md	/^### **Layout Personalizado**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Layout de Desarrollo (Como en la imagen)**	README.md	/^### **Layout de Desarrollo (Como en la imagen)**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Layouts Especializados**	KEYMAPS.md	/^### **Layouts Especializados**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Layouts Predefinidos**	KEYMAPS.md	/^### **Layouts Predefinidos**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Leader Key: `<Space>`**	README.md	/^### **Leader Key: `<Space>`**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Modificar atajos**	README.md	/^### **Modificar atajos**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔧 Personalización
+**Mover Líneas**	KEYMAPS.md	/^### **Mover Líneas**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""✏️ **Edición Avanzada**
+**NERDTree**	README.md	/^#### **NERDTree**$/;"	t	subsection:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado""**Plugins**
+**Navegación de Código**	KEYMAPS.md	/^### **Navegación de Código**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🔧 **CoC.nvim (LSP y Autocompletado)**
+**Navegación entre Ventanas del Layout**	KEYMAPS.md	/^### **Navegación entre Ventanas del Layout**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""💻 **Terminales Integrados**
+**Navegación entre ventanas**	README.md	/^### **Navegación entre ventanas**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Navegación y Ventanas**	KEYMAPS.md	/^### **Navegación y Ventanas**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Atajos Básicos**
+**Navegación**	KEYMAPS.md	/^### **Navegación**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""💻 **Terminales Integrados**
+**Navegación**	README.md	/^### **Navegación**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Números de Línea**	KEYMAPS.md	/^### **Números de Línea**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Utilidades Avanzadas**
+**PHP**	KEYMAPS.md	/^### **PHP**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🌐 **Desarrollo Web**
+**Para funcionalidad completa:**	README.md	/^### **Para funcionalidad completa:**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""📦 Dependencias Opcionales
+**Persistencia Inteligente**	KEYMAPS.md	/^### **Persistencia Inteligente**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎛️ **Funciones Especiales**
+**Personalización del Layout**	README.md	/^### **Personalización del Layout**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""💻 Layout de Desarrollo (Como tu imagen)
+**Plugins**	README.md	/^### **Plugins**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Python & Entornos Virtuales**	README.md	/^### **Python & Entornos Virtuales**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Quick Switch (Acceso Rápido)**	KEYMAPS.md	/^### **Quick Switch (Acceso Rápido)**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎨 **Sistema de Layouts**
+**Reinstalar Extensiones de CoC**	README.md	/^### **Reinstalar Extensiones de CoC**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**Restauración Automática**	KEYMAPS.md	/^### **Restauración Automática**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎛️ **Funciones Especiales**
+**Tagbar**	KEYMAPS.md	/^### **Tagbar**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Utilidades Avanzadas**
+**Tema no carga**	README.md	/^### **Tema no carga**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐛 Solución de Problemas
+**UndoTree**	KEYMAPS.md	/^### **UndoTree**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""🎯 **Utilidades Avanzadas**
+**Uso típico**	README.md	/^### **Uso típico**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🐍 Entornos Virtuales de Python
+**Utilidades**	KEYMAPS.md	/^### **Utilidades**$/;"	S	section:🔥 Guía de Atajos de Teclado - Neovim""✏️ **Edición Avanzada**
+**Utilidades**	README.md	/^### **Utilidades**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""⌨️ Atajos de Teclado
+**Utilidades**	README.md	/^### **Utilidades**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🔌 Plugins Incluidos
+**Ventajas del Layout Integrado**	README.md	/^### **Ventajas del Layout Integrado**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""💻 Layout de Desarrollo (Como tu imagen)
+**Verificación Completa de Neovim**	README.md	/^### **Verificación Completa de Neovim**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🩺 Verificación de Salud
+**Verificación Rápida**	README.md	/^### **Verificación Rápida**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🩺 Verificación de Salud
+**vim-plug**	README.md	/^### **vim-plug**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""🚀 Comandos Útiles
+**¿Qué es el Layout de Desarrollo?**	README.md	/^### **¿Qué es el Layout de Desarrollo?**$/;"	S	section:🚀 Configuración de Neovim con vim-plug""💻 Layout de Desarrollo (Como tu imagen)
+0	coc-settings.json	/^      "args": ["start"],$/;"	s	array:languageserver.bash.args
+0	coc-settings.json	/^      "filetypes": ["sh", "bash"],$/;"	s	array:languageserver.bash.filetypes
+0	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	s	array:languageserver.bash.ignoredRootPaths
+0	coc-settings.json	/^    "class[:]\\s*['\\"][^'\\"]*['\\"]|className[:]\\s*['\\"][^'\\"]*['"]|tw[`]([^`]*)[`]`$/;"	s	array:tailwindCSS.experimental.classRegex
+0	coc-settings.json	/^    "coc-html",$/;"	s	array:coc.preferences.extensions
+0	coc-settings.json	/^    "extensions": [".js", ".ts"]$/;"	s	array:eslint.options.extensions
+0	coc-settings.json	/^  "eslint.filetypes": ["javascript", "typescript"],$/;"	s	array:eslint.filetypes
+1	coc-settings.json	/^      "filetypes": ["sh", "bash"],$/;"	s	array:languageserver.bash.filetypes
+1	coc-settings.json	/^    "coc-css",$/;"	s	array:coc.preferences.extensions
+1	coc-settings.json	/^    "extensions": [".js", ".ts"]$/;"	s	array:eslint.options.extensions
+1	coc-settings.json	/^  "eslint.filetypes": ["javascript", "typescript"],$/;"	s	array:eslint.filetypes
+2	coc-settings.json	/^    "coc-tailwindcss",$/;"	s	array:coc.preferences.extensions
+3	coc-settings.json	/^    "coc-json",$/;"	s	array:coc.preferences.extensions
+4	coc-settings.json	/^    "coc-tsserver",$/;"	s	array:coc.preferences.extensions
+5	coc-settings.json	/^    "coc-emmet",$/;"	s	array:coc.preferences.extensions
+6	coc-settings.json	/^    "coc-ruff",$/;"	s	array:coc.preferences.extensions
+7	coc-settings.json	/^    "coc-pyright",$/;"	s	array:coc.preferences.extensions
+8	coc-settings.json	/^    "coc-sh"$/;"	s	array:coc.preferences.extensions
+<A-j>	maps.vim	/^inoremap <A-j> <Esc>:m .+1<CR>==gi$/;"	m
+<A-j>	maps.vim	/^nnoremap <A-j> :m .+1<CR>==$/;"	m
+<A-j>	maps.vim	/^vnoremap <A-j> :m '>+1<CR>gv=gv$/;"	m
+<A-k>	maps.vim	/^inoremap <A-k> <Esc>:m .-2<CR>==gi$/;"	m
+<A-k>	maps.vim	/^nnoremap <A-k> :m .-2<CR>==$/;"	m
+<A-k>	maps.vim	/^vnoremap <A-k> :m '<-2<CR>gv=gv$/;"	m
+<C-Down>	maps.vim	/^nnoremap <C-Down> :resize +2<CR>$/;"	m
+<C-Left>	maps.vim	/^nnoremap <C-Left> :vertical resize -2<CR>$/;"	m
+<C-Right>	maps.vim	/^nnoremap <C-Right> :vertical resize +2<CR>$/;"	m
+<C-Space>	plugin-config.vim	/^inoremap <silent><expr> <C-Space> coc#refresh()$/;"	m
+<C-Up>	maps.vim	/^nnoremap <C-Up> :resize -2<CR>$/;"	m
+<C-a>	maps.vim	/^nnoremap <C-a> ggVG$/;"	m
+<C-d>	maps.vim	/^nnoremap <C-d> :copy .<CR>$/;"	m
+<C-h>	maps.vim	/^nnoremap <C-h> <C-w>h$/;"	m
+<C-j>	maps.vim	/^nnoremap <C-j> <C-w>j$/;"	m
+<C-k>	maps.vim	/^nnoremap <C-k> <C-w>k$/;"	m
+<C-l>	maps.vim	/^nnoremap <C-l> <C-w>l$/;"	m
+<C-p>	maps.vim	/^nnoremap <C-p> :Files<CR>$/;"	m
+<C-y>,	maps.vim	/^imap <C-y>, <plug>(emmet-expand-abbr)$/;"	m
+<C-y>;	maps.vim	/^imap <C-y>; <plug>(emmet-expand-word)$/;"	m
+<C-y>D	maps.vim	/^imap <C-y>D <plug>(emmet-balance-tag-outward)$/;"	m
+<C-y>d	maps.vim	/^imap <C-y>d <plug>(emmet-balance-tag-inward)$/;"	m
+<C-y>u	maps.vim	/^imap <C-y>u <plug>(emmet-update-tag)$/;"	m
+<CR>	plugin-config.vim	/^inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\\<CR>"$/;"	m
+<F3>	maps.vim	/^nnoremap <F3> :NERDTreeToggle<CR>$/;"	m
+<F5>	maps.vim	/^nnoremap <F5> :UndotreeToggle<CR>$/;"	m
+<F8>	maps.vim	/^nnoremap <F8> :TagbarToggle<CR>$/;"	m
+<S-TAB>	plugin-config.vim	/^inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\\<C-h>"$/;"	m
+<TAB>	plugin-config.vim	/^inoremap <silent><expr> <TAB>$/;"	m
+<leader><leader>/	maps.vim	/^map <leader><leader>\/ <Plug>(easymotion-sn)$/;"	m
+<leader><leader>f	maps.vim	/^map <leader><leader>f <Plug>(easymotion-bd-f)$/;"	m
+<leader><leader>j	maps.vim	/^map <leader><leader>j <Plug>(easymotion-j)$/;"	m
+<leader><leader>k	maps.vim	/^map <leader><leader>k <Plug>(easymotion-k)$/;"	m
+<leader><leader>s	maps.vim	/^map <leader><leader>s <Plug>(easymotion-s2)$/;"	m
+<leader><leader>w	maps.vim	/^map <leader><leader>w <Plug>(easymotion-bd-w)$/;"	m
+<leader>?	maps.vim	/^nnoremap <leader>? :WhichKey '<Space>'<CR>$/;"	m
+<leader>?	maps.vim	/^nnoremap <silent> <leader>? :WhichKey ' '<CR>$/;"	m
+<leader>R	maps.vim	/^nnoremap <leader>R :source $MYVIMRC<CR>$/;"	m
+<leader>bd	maps.vim	/^nnoremap <leader>bd :bdelete<CR>$/;"	m
+<leader>bn	maps.vim	/^nnoremap <leader>bn :bnext<CR>$/;"	m
+<leader>bp	maps.vim	/^nnoremap <leader>bp :bprevious<CR>$/;"	m
+<leader>c	maps.vim	/^nnoremap <leader>c :nohlsearch<CR>$/;"	m
+<leader>dl	maps.vim	/^nnoremap <leader>dl :call CreateDevLayout()<CR>$/;"	m
+<leader>e	maps.vim	/^nnoremap <leader>e :NERDTreeFind<CR>$/;"	m
+<leader>f	maps.vim	/^nmap <leader>f <Plug>(coc-format-selected)$/;"	m
+<leader>f	maps.vim	/^xmap <leader>f <Plug>(coc-format-selected)$/;"	m
+<leader>fb	maps.vim	/^nnoremap <leader>fb :Buffers<CR>$/;"	m
+<leader>fg	maps.vim	/^nnoremap <leader>fg :GFiles<CR>$/;"	m
+<leader>fl	maps.vim	/^nnoremap <leader>fl :Lines<CR>$/;"	m
+<leader>ft	maps.vim	/^nnoremap <leader>ft :Tags<CR>$/;"	m
+<leader>ga	maps.vim	/^nnoremap <leader>ga :Git add .<CR>$/;"	m
+<leader>gb	maps.vim	/^nnoremap <leader>gb :Git branch<CR>$/;"	m
+<leader>gc	maps.vim	/^nnoremap <leader>gc :Git commit<CR>$/;"	m
+<leader>gh	maps.vim	/^nnoremap <leader>gh :GitGutterStageHunk<CR>$/;"	m
+<leader>gll	maps.vim	/^nnoremap <leader>gll :Git pull<CR>$/;"	m
+<leader>gn	maps.vim	/^nnoremap <leader>gn :GitGutterNextHunk<CR>$/;"	m
+<leader>go	maps.vim	/^nnoremap <leader>go :Git checkout<CR>$/;"	m
+<leader>gp	maps.vim	/^nnoremap <leader>gp :GitGutterPrevHunk<CR>$/;"	m
+<leader>gsh	maps.vim	/^nnoremap <leader>gsh :Git push<CR>$/;"	m
+<leader>gst	maps.vim	/^nnoremap <leader>gst :Git status<CR>$/;"	m
+<leader>gu	maps.vim	/^nnoremap <leader>gu :GitGutterUndoHunk<CR>$/;"	m
+<leader>ht	maps.vim	/^nnoremap <leader>ht :set filetype=html<CR>$/;"	m
+<leader>lH	maps.vim	/^nnoremap <leader>lH :call CustomSplitHorizontal()<CR>$/;"	m
+<leader>lS	maps.vim	/^nnoremap <leader>lS :call SaveLayoutState(input('Nombre del layout: '))<CR>$/;"	m
+<leader>lT	maps.vim	/^nnoremap <leader>lT :call CustomTerminal()<CR>$/;"	m
+<leader>lV	maps.vim	/^nnoremap <leader>lV :call CustomSplitVertical()<CR>$/;"	m
+<leader>la	maps.vim	/^nnoremap <leader>la :call AdjustDevLayout()<CR> " Reajustar layout$/;"	m
+<leader>lc	maps.vim	/^nnoremap <leader>lc :call StartCustomLayout()<CR>$/;"	m
+<leader>ld	maps.vim	/^nnoremap <leader>ld :call FinishCustomLayout()<CR>$/;"	m
+<leader>le	maps.vim	/^nnoremap <leader>le :call CustomEditor()<CR>$/;"	m
+<leader>li	maps.vim	/^nnoremap <leader>li :call ShowCurrentLayoutInfo()<CR>$/;"	m
+<leader>ll	maps.vim	/^nnoremap <leader>ll :call LoadCustomLayout()<CR>$/;"	m
+<leader>lm	maps.vim	/^nnoremap <leader>lm :call ManageCustomLayouts()<CR>$/;"	m
+<leader>ln	maps.vim	/^nnoremap <leader>ln :call NextLayoutStep()<CR>$/;"	m
+<leader>lq	maps.vim	/^nnoremap <leader>lq :call CloseAllLayoutWindows()<CR>$/;"	m
+<leader>lr	maps.vim	/^nnoremap <leader>lr :call CustomResize()<CR>$/;"	m
+<leader>ls	maps.vim	/^nnoremap <leader>ls :call SaveCustomLayout()<CR>$/;"	m
+<leader>q	maps.vim	/^nnoremap <leader>q :q!<CR>$/;"	m
+<leader>rn	maps.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
+<leader>s	maps.vim	/^nnoremap <leader>s :%s\/\/gc<left><left><left>$/;"	m
+<leader>te	maps.vim	/^nnoremap <leader>te :terminal<CR>$/;"	m
+<leader>tn	maps.vim	/^nnoremap <leader>tn :set number!<CR>$/;"	m
+<leader>tr	maps.vim	/^nnoremap <leader>tr :set relativenumber!<CR>$/;"	m
+<leader>w	maps.vim	/^nnoremap <leader>w :w<CR>$/;"	m
+<leader>wq	maps.vim	/^nnoremap <leader>wq :wq<CR>$/;"	m
+ActivateVenv	plugin-config.vim	/^function! ActivateVenv(venv_path)$/;"	f
+AdjustDevLayout	plugin-config.vim	/^function! AdjustDevLayout()$/;"	f
+AirlineInit	plugin-config.vim	/^function! AirlineInit()$/;"	f
+AutoSaveLayoutState	plugin-config.vim	/^function! AutoSaveLayoutState()$/;"	f
+CloseAllLayoutWindows	plugin-config.vim	/^function! CloseAllLayoutWindows()$/;"	f
+CreateDevLayout	plugin-config.vim	/^function! CreateDevLayout()$/;"	f
+CurrentLayoutStatusline	plugin-config.vim	/^function! CurrentLayoutStatusline()$/;"	f
+CustomEditor	plugin-config.vim	/^function! CustomEditor()$/;"	f
+CustomResize	plugin-config.vim	/^function! CustomResize()$/;"	f
+CustomSplitHorizontal	plugin-config.vim	/^function! CustomSplitHorizontal()$/;"	f
+CustomSplitVertical	plugin-config.vim	/^function! CustomSplitVertical()$/;"	f
+CustomTerminal	plugin-config.vim	/^function! CustomTerminal()$/;"	f
+DetectVirtualEnv	plugin-config.vim	/^function! DetectVirtualEnv()$/;"	f
+DevLayout	plugin-config.vim	/^augroup DevLayout$/;"	a
+FinishCustomLayout	plugin-config.vim	/^function! FinishCustomLayout()$/;"	f
+HighlightCurrentLayout	plugin-config.vim	/^function! HighlightCurrentLayout()$/;"	f
+K	maps.vim	/^nnoremap <silent> K :call <SID>show_documentation()<CR>$/;"	m
+LayoutInfo	plugin-config.vim	/^command! LayoutInfo call ShowCurrentLayoutInfo()$/;"	c
+LoadCustomLayout	plugin-config.vim	/^function! LoadCustomLayout()$/;"	f
+ManageCustomLayouts	plugin-config.vim	/^function! ManageCustomLayouts()$/;"	f
+NextLayoutStep	plugin-config.vim	/^function! NextLayoutStep()$/;"	f
+ReloadWhichKey	init.vim	/^command! ReloadWhichKey source ~\/.config\/nvim\/which-key-config.vim$/;"	c
+RunInTerminal	plugin-config.vim	/^function! RunInTerminal(cmd, terminal_num)$/;"	f
+SaveCustomLayout	plugin-config.vim	/^function! SaveCustomLayout()$/;"	f
+SaveLayoutState	plugin-config.vim	/^function! SaveLayoutState(layout_name)$/;"	f
+ShowCurrentLayoutInfo	plugin-config.vim	/^function! ShowCurrentLayoutInfo()$/;"	f
+StartCustomLayout	plugin-config.vim	/^function! StartCustomLayout()$/;"	f
+ToggleTerminal	plugin-config.vim	/^function! ToggleTerminal(terminal_num)$/;"	f
+VirtualEnvStatusline	plugin-config.vim	/^function! VirtualEnvStatusline()$/;"	f
+[g	maps.vim	/^nmap <silent> [g <Plug>(coc-diagnostic-prev)$/;"	m
+]g	maps.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
+args	coc-settings.json	/^      "args": ["start"],$/;"	a	object:languageserver.bash
+bash	coc-settings.json	/^    "bash": {$/;"	o	object:languageserver
+border	coc-settings.json	/^    "border": true,$/;"	b	object:suggest.pumFloatConfig
+coc.preferences.extensions	coc-settings.json	/^  "coc.preferences.extensions": [$/;"	a
+command	coc-settings.json	/^      "command": "bash-language-server",$/;"	s	object:languageserver.bash
+css.validate	coc-settings.json	/^  "css.validate": true,$/;"	b
+diagnostic.checkCurrentLine	coc-settings.json	/^  "diagnostic.checkCurrentLine": true$/;"	b
+diagnostic.hintSign	coc-settings.json	/^  "diagnostic.hintSign": "💡",$/;"	s
+diagnostic.infoSign	coc-settings.json	/^  "diagnostic.infoSign": "ℹ",$/;"	s
+diagnostic.warningSign	coc-settings.json	/^  "diagnostic.warningSign": "⚠",$/;"	s
+emmet.includeLanguages	coc-settings.json	/^  "emmet.includeLanguages": {$/;"	o
+eslint.enable	coc-settings.json	/^  "eslint.enable": true,$/;"	b
+eslint.filetypes	coc-settings.json	/^  "eslint.filetypes": ["javascript", "typescript"],$/;"	a
+eslint.options	coc-settings.json	/^  "eslint.options": {$/;"	o
+extensions	coc-settings.json	/^    "extensions": [".js", ".ts"]$/;"	a	object:eslint.options
+filetypes	coc-settings.json	/^      "filetypes": ["sh", "bash"],$/;"	a	object:languageserver.bash
+g:AutoPairsShortcutToggle	plugin-config.vim	/^let g:AutoPairsShortcutToggle = '<M-p>'$/;"	v
+g:EasyMotion_do_mapping	plugin-config.vim	/^let g:EasyMotion_do_mapping = 0$/;"	v
+g:EasyMotion_smartcase	plugin-config.vim	/^let g:EasyMotion_smartcase = 1$/;"	v
+g:EasyMotion_startofline	plugin-config.vim	/^let g:EasyMotion_startofline = 0$/;"	v
+g:NERDTreeMinimalUI	plugin-config.vim	/^let g:NERDTreeMinimalUI = 1$/;"	v
+g:NERDTreeQuitOnOpen	plugin-config.vim	/^let g:NERDTreeQuitOnOpen = 1$/;"	v
+g:NERDTreeShowHidden	plugin-config.vim	/^let g:NERDTreeShowHidden = 1$/;"	v
+g:NERDTreeWinPos	plugin-config.vim	/^let g:NERDTreeWinPos = "right"$/;"	v
+g:NERDTreeWinSize	plugin-config.vim	/^let g:NERDTreeWinSize = 30$/;"	v
+g:airline#extensions#tabline#enabled	plugin-config.vim	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
+g:airline#extensions#tabline#formatter	plugin-config.vim	/^let g:airline#extensions#tabline#formatter = 'unique_tail'$/;"	v
+g:airline#extensions#virtualenv#enabled	plugin-config.vim	/^let g:airline#extensions#virtualenv#enabled = 1$/;"	v
+g:airline_powerline_fonts	plugin-config.vim	/^let g:airline_powerline_fonts = 1$/;"	v
+g:airline_section_b	plugin-config.vim	/^    let g:airline_section_b = airline#section#create(['hunks', 'branch'])$/;"	v
+g:airline_section_x	plugin-config.vim	/^    let g:airline_section_x = airline#section#create_right(['%{CurrentLayoutStatusline()}', '%{V/;"	v
+g:airline_theme	plugin-config.vim	/^let g:airline_theme = 'dark'$/;"	v
+g:clang_format#auto_format	plugin-config.vim	/^let g:clang_format#auto_format = 0$/;"	v
+g:clang_format#auto_format_on_insert_leave	plugin-config.vim	/^let g:clang_format#auto_format_on_insert_leave = 0$/;"	v
+g:current_layout_info	plugin-config.vim	/^    let g:current_layout_info = current_state$/;"	v
+g:current_layout_info	plugin-config.vim	/^    let g:current_layout_info = {$/;"	v
+g:current_layout_info	plugin-config.vim	/^let g:current_layout_info = {$/;"	v
+g:custom_layout_active	plugin-config.vim	/^    let g:custom_layout_active = 0$/;"	v
+g:custom_layout_active	plugin-config.vim	/^    let g:custom_layout_active = 1$/;"	v
+g:custom_layout_active	plugin-config.vim	/^let g:custom_layout_active = 0$/;"	v
+g:custom_layout_step	plugin-config.vim	/^    let g:custom_layout_step += 1$/;"	v
+g:custom_layout_step	plugin-config.vim	/^    let g:custom_layout_step = 0$/;"	v
+g:custom_layout_step	plugin-config.vim	/^let g:custom_layout_step = 0$/;"	v
+g:custom_terminals	plugin-config.vim	/^    let g:custom_terminals = {}$/;"	v
+g:custom_terminals	plugin-config.vim	/^    let g:custom_terminals[terminal_id] = bufnr('%')$/;"	v
+g:custom_terminals	plugin-config.vim	/^let g:custom_terminals = {}$/;"	v
+g:dev_terminal_1	plugin-config.vim	/^            let g:dev_terminal_1 = bufnr('%')$/;"	v
+g:dev_terminal_1	plugin-config.vim	/^    let g:dev_terminal_1 = bufnr('%')$/;"	v
+g:dev_terminal_2	plugin-config.vim	/^            let g:dev_terminal_2 = bufnr('%')$/;"	v
+g:dev_terminal_2	plugin-config.vim	/^    let g:dev_terminal_2 = bufnr('%')$/;"	v
+g:fzf_layout	plugin-config.vim	/^let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }$/;"	v
+g:fzf_preview_window	plugin-config.vim	/^let g:fzf_preview_window = 'right:50%'$/;"	v
+g:gitgutter_enabled	plugin-config.vim	/^let g:gitgutter_enabled = 1$/;"	v
+g:gitgutter_highlight_linenrs	plugin-config.vim	/^let g:gitgutter_highlight_linenrs = 1$/;"	v
+g:gitgutter_map_keys	plugin-config.vim	/^let g:gitgutter_map_keys = 0$/;"	v
+g:layout_just_changed	plugin-config.vim	/^        let g:layout_just_changed = 0$/;"	v
+g:layout_state_file	plugin-config.vim	/^let g:layout_state_file = expand('~\/.config\/nvim\/layout_state.json')$/;"	v
+g:python3_host_prog	plugin-config.vim	/^            let g:python3_host_prog = fnamemodify(python_path, ':p')$/;"	v
+g:python3_host_prog	plugin-config.vim	/^            let g:python3_host_prog = fnamemodify(venv_path, ':p')$/;"	v
+g:python3_host_prog	plugin-config.vim	/^            let g:python3_host_prog = python_path$/;"	v
+g:python3_host_prog	plugin-config.vim	/^        let g:python3_host_prog = exepath('python3')$/;"	v
+g:rainbow_active	plugin-config.vim	/^let g:rainbow_active = 1$/;"	v
+g:tagbar_compact	plugin-config.vim	/^let g:tagbar_compact = 1$/;"	v
+g:tagbar_sort	plugin-config.vim	/^let g:tagbar_sort = 0$/;"	v
+g:tagbar_width	plugin-config.vim	/^let g:tagbar_width = 30$/;"	v
+g:user_emmet_install_global	plugin-config.vim	/^let g:user_emmet_install_global = 0$/;"	v
+g:user_emmet_mode	plugin-config.vim	/^let g:user_emmet_mode='inv'  " habilitar en todos los modos$/;"	v
+gd	maps.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
+gi	maps.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
+gr	maps.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
+gy	maps.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+html	coc-settings.json	/^    "html": "html",$/;"	s	object:tailwindCSS.includeLanguages
+html.suggest.html5	coc-settings.json	/^  "html.suggest.html5": true,$/;"	b
+htmldjango	coc-settings.json	/^    "htmldjango": "html"$/;"	s	object:emmet.includeLanguages
+htmldjango	coc-settings.json	/^    "htmldjango": "html"$/;"	s	object:tailwindCSS.includeLanguages
+ignoredRootPaths	coc-settings.json	/^      "ignoredRootPaths": ["~"]$/;"	a	object:languageserver.bash
+javascript	coc-settings.json	/^    "javascript": "javascript",$/;"	s	object:emmet.includeLanguages
+javascript	coc-settings.json	/^    "javascript": "javascript",$/;"	s	object:tailwindCSS.includeLanguages
+javascript.suggest.autoImports	coc-settings.json	/^  "javascript.suggest.autoImports": true,$/;"	b
+languageserver	coc-settings.json	/^  "languageserver": {$/;"	o
+mapleader	maps.vim	/^let mapleader = " "$/;"	v
+maplocalleader	maps.vim	/^let maplocalleader = " "$/;"	v
+markdown	coc-settings.json	/^    "markdown": "markdown",$/;"	s	object:emmet.includeLanguages
+print_error	install-dev-tools.sh	/^print_error() {$/;"	f
+print_error	install.sh	/^print_error() {$/;"	f
+print_info	install-dev-tools.sh	/^print_info() {$/;"	f
+print_info	install.sh	/^print_info() {$/;"	f
+print_success	install-dev-tools.sh	/^print_success() {$/;"	f
+print_success	install.sh	/^print_success() {$/;"	f
+print_warning	install-dev-tools.sh	/^print_warning() {$/;"	f
+print_warning	install.sh	/^print_warning() {$/;"	f
+python.pythonPath	coc-settings.json	/^  "python.pythonPath": "python3",$/;"	s
+rounded	coc-settings.json	/^    "rounded": true$/;"	b	object:suggest.pumFloatConfig
+ruff.format	coc-settings.json	/^  "ruff.format": true,$/;"	b
+ruff.organizeImports	coc-settings.json	/^  "ruff.organizeImports": true,$/;"	b
+s:check_back_space	plugin-config.vim	/^function! s:check_back_space() abort$/;"	f
+s:show_documentation	maps.vim	/^function! s:show_documentation()$/;"	f
+suggest.acceptSuggestionOnEnter	coc-settings.json	/^  "suggest.acceptSuggestionOnEnter": "on",$/;"	s
+suggest.autoTrigger	coc-settings.json	/^  "suggest.autoTrigger": "always",$/;"	s
+suggest.enablePreselect	coc-settings.json	/^  "suggest.enablePreselect": true,$/;"	b
+suggest.enablePreview	coc-settings.json	/^  "suggest.enablePreview": true,$/;"	b
+suggest.minTriggerInputLength	coc-settings.json	/^  "suggest.minTriggerInputLength": 1,$/;"	n
+suggest.pumFloatConfig	coc-settings.json	/^  "suggest.pumFloatConfig": {$/;"	o
+tailwindCSS.experimental.classRegex	coc-settings.json	/^  "tailwindCSS.experimental.classRegex": [$/;"	a
+tailwindCSS.includeLanguages	coc-settings.json	/^  "tailwindCSS.includeLanguages": {$/;"	o
+typescript	coc-settings.json	/^    "typescript": "typescript",$/;"	s	object:emmet.includeLanguages
+typescript.suggest.autoImports	coc-settings.json	/^  "typescript.suggest.autoImports": true,$/;"	b
+⌨️ Atajos de Teclado	README.md	/^## ⌨️ Atajos de Teclado$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+⌨️ Mapeos de Teclas (350+ mapeos)	REVISION_COMPLETA_2024.md	/^## ⌨️ Mapeos de Teclas (350+ mapeos)$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+⚠️ Conflictos Menores Identificados	REVISION_COMPLETA_2024.md	/^### ⚠️ Conflictos Menores Identificados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔍 Análisis de Conflictos
+⚡ Instalación Rápida	README.md	/^## ⚡ Instalación Rápida$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+⚡ Mapeos Destacados	REVISION_COMPLETA_2024.md	/^### ⚡ Mapeos Destacados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""⌨️ Mapeos de Teclas (350+ mapeos)
+✅ Fortalezas de la Estructura	REVISION_COMPLETA_2024.md	/^### ✅ Fortalezas de la Estructura$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🏗️ Estructura de la Configuración
+✅ Optimizaciones Implementadas	REVISION_COMPLETA_2024.md	/^### ✅ Optimizaciones Implementadas$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🚀 Rendimiento
+✅ Sin Conflictos Críticos Detectados	REVISION_COMPLETA_2024.md	/^### ✅ Sin Conflictos Críticos Detectados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔍 Análisis de Conflictos
+✏️ **Edición Avanzada**	KEYMAPS.md	/^## ✏️ **Edición Avanzada**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+❓ **Ayuda y Which-key**	KEYMAPS.md	/^## ❓ **Ayuda y Which-key**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+⭐ Puntuación General: 9.2/10	REVISION_COMPLETA_2024.md	/^### ⭐ Puntuación General: 9.2\/10$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎯 Resumen Ejecutivo
+🌐 **Desarrollo Web**	KEYMAPS.md	/^## 🌐 **Desarrollo Web**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🌐 Web Development (★★★★★)	REVISION_COMPLETA_2024.md	/^### 🌐 Web Development (★★★★★)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔧 Configuraciones Específicas
+🌟 Plugins Esenciales Bien Configurados	REVISION_COMPLETA_2024.md	/^### 🌟 Plugins Esenciales Bien Configurados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔌 Análisis de Plugins (35+ plugins)
+🌟 Puntos Fuertes Únicos	REVISION_COMPLETA_2024.md	/^### 🌟 Puntos Fuertes Únicos$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎉 Conclusión
+🎉 Conclusión	REVISION_COMPLETA_2024.md	/^## 🎉 Conclusión$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🎓 Funcionalidades Avanzadas Únicas	REVISION_COMPLETA_2024.md	/^## 🎓 Funcionalidades Avanzadas Únicas$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🎛️ **Funciones Especiales**	KEYMAPS.md	/^## 🎛️ **Funciones Especiales**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🎨 **Sistema de Layouts**	KEYMAPS.md	/^## 🎨 **Sistema de Layouts**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🎨 Tema y Apariencia	REVISION_COMPLETA_2024.md	/^### 🎨 Tema y Apariencia$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔌 Análisis de Plugins (35+ plugins)
+🎮 Sistema de Layouts (★★★★★ Funcionalidad Única)	REVISION_COMPLETA_2024.md	/^## 🎮 Sistema de Layouts (★★★★★ Funcionalidad Única)$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🎯 **Atajos Básicos**	KEYMAPS.md	/^## 🎯 **Atajos Básicos**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🎯 **Utilidades Avanzadas**	KEYMAPS.md	/^## 🎯 **Utilidades Avanzadas**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🎯 Mejoras Funcionales (Prioridad Media)	REVISION_COMPLETA_2024.md	/^### 🎯 Mejoras Funcionales (Prioridad Media)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🛠️ Recomendaciones de Mejora
+🎯 Organización Excelente	REVISION_COMPLETA_2024.md	/^### 🎯 Organización Excelente$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""⌨️ Mapeos de Teclas (350+ mapeos)
+🎯 Resumen Ejecutivo	REVISION_COMPLETA_2024.md	/^## 🎯 Resumen Ejecutivo$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🎯 Siguiente Nivel	REVISION_COMPLETA_2024.md	/^### 🎯 Siguiente Nivel$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎉 Conclusión
+🏆 Comparación con Configuraciones Estándar	REVISION_COMPLETA_2024.md	/^## 🏆 Comparación con Configuraciones Estándar$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🏆 Layouts Especializados Implementados	REVISION_COMPLETA_2024.md	/^### 🏆 Layouts Especializados Implementados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎮 Sistema de Layouts (★★★★★ Funcionalidad Única)
+🏗️ Estructura de la Configuración	REVISION_COMPLETA_2024.md	/^## 🏗️ Estructura de la Configuración$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🏗️ Sistema de Layout Personalizable	REVISION_COMPLETA_2024.md	/^### 🏗️ Sistema de Layout Personalizable$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎓 Funcionalidades Avanzadas Únicas
+🏷️ **Teclas de Función**	KEYMAPS.md	/^## 🏷️ **Teclas de Función**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🐍 **Python y Django**	KEYMAPS.md	/^## 🐍 **Python y Django**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🐍 Entornos Virtuales de Python	README.md	/^## 🐍 Entornos Virtuales de Python$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🐍 Python/Django (★★★★★)	REVISION_COMPLETA_2024.md	/^### 🐍 Python\/Django (★★★★★)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔧 Configuraciones Específicas
+🐛 Solución de Problemas	README.md	/^## 🐛 Solución de Problemas$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+💡 **Tips y Trucos**	KEYMAPS.md	/^## 💡 **Tips y Trucos**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+💡 Consejos de Uso Óptimo	REVISION_COMPLETA_2024.md	/^## 💡 Consejos de Uso Óptimo$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+💻 **Terminales Integrados**	KEYMAPS.md	/^## 💻 **Terminales Integrados**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+💻 Layout de Desarrollo (Como tu imagen)	README.md	/^## 💻 Layout de Desarrollo (Como tu imagen)$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+💾 Base de Datos (★★★★☆)	REVISION_COMPLETA_2024.md	/^### 💾 Base de Datos (★★★★☆)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔧 Configuraciones Específicas
+💾 Persistencia Inteligente	REVISION_COMPLETA_2024.md	/^### 💾 Persistencia Inteligente$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎮 Sistema de Layouts (★★★★★ Funcionalidad Única)
+📁 **Explorador de Archivos (NERDTree)**	KEYMAPS.md	/^## 📁 **Explorador de Archivos (NERDTree)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+📁 Archivos Principales	REVISION_COMPLETA_2024.md	/^### 📁 Archivos Principales$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🏗️ Estructura de la Configuración
+📁 Estructura de Archivos	README.md	/^## 📁 Estructura de Archivos$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+📄 Licencia	README.md	/^## 📄 Licencia$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+📊 Indicadores Visuales Avanzados	REVISION_COMPLETA_2024.md	/^### 📊 Indicadores Visuales Avanzados$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎓 Funcionalidades Avanzadas Únicas
+📊 Puntuación Final: **9.2/10**	REVISION_COMPLETA_2024.md	/^### 📊 Puntuación Final: **9.2\/10**$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎉 Conclusión
+📊 Tiempo de Inicio Estimado	REVISION_COMPLETA_2024.md	/^### 📊 Tiempo de Inicio Estimado$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🚀 Rendimiento
+📋 Lista de Chequeo de Mantenimiento	REVISION_COMPLETA_2024.md	/^## 📋 Lista de Chequeo de Mantenimiento$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+📋 Reporte de Revisión Completa - Configuración Neovim	REVISION_COMPLETA_2024.md	/^# 📋 Reporte de Revisión Completa - Configuración Neovim$/;"	c
+📚 **VimWiki**	KEYMAPS.md	/^## 📚 **VimWiki**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+📚 Comandos Más Útiles	REVISION_COMPLETA_2024.md	/^### 📚 Comandos Más Útiles$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""💡 Consejos de Uso Óptimo
+📦 Dependencias Opcionales	README.md	/^## 📦 Dependencias Opcionales$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🔀 **Git (GitGutter + Fugitive)**	KEYMAPS.md	/^## 🔀 **Git (GitGutter + Fugitive)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🔄 Mantenimiento Mensual	REVISION_COMPLETA_2024.md	/^### 🔄 Mantenimiento Mensual$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""📋 Lista de Chequeo de Mantenimiento
+🔌 Análisis de Plugins (35+ plugins)	REVISION_COMPLETA_2024.md	/^## 🔌 Análisis de Plugins (35+ plugins)$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🔌 Plugins Incluidos	README.md	/^## 🔌 Plugins Incluidos$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🔍 **Búsqueda y Archivos (FZF)**	KEYMAPS.md	/^## 🔍 **Búsqueda y Archivos (FZF)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🔍 Análisis de Conflictos	REVISION_COMPLETA_2024.md	/^## 🔍 Análisis de Conflictos$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🔥 Guía de Atajos de Teclado - Neovim	KEYMAPS.md	/^# 🔥 Guía de Atajos de Teclado - Neovim$/;"	c
+🔧 **CoC.nvim (LSP y Autocompletado)**	KEYMAPS.md	/^## 🔧 **CoC.nvim (LSP y Autocompletado)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🔧 Configuraciones Específicas	REVISION_COMPLETA_2024.md	/^## 🔧 Configuraciones Específicas$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🔧 Mantenimiento Trimestral	REVISION_COMPLETA_2024.md	/^### 🔧 Mantenimiento Trimestral$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""📋 Lista de Chequeo de Mantenimiento
+🔧 Optimizaciones Sugeridas (Prioridad Alta)	REVISION_COMPLETA_2024.md	/^### 🔧 Optimizaciones Sugeridas (Prioridad Alta)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🛠️ Recomendaciones de Mejora
+🔧 Personalización	README.md	/^## 🔧 Personalización$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🔮 Funcionalidades Futuras (Prioridad Baja)	REVISION_COMPLETA_2024.md	/^### 🔮 Funcionalidades Futuras (Prioridad Baja)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🛠️ Recomendaciones de Mejora
+🖥️ Integración con Warp Terminal (★★★★★)	REVISION_COMPLETA_2024.md	/^### 🖥️ Integración con Warp Terminal (★★★★★)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔧 Configuraciones Específicas
+🗄️ **Base de Datos (vim-dadbod)**	KEYMAPS.md	/^## 🗄️ **Base de Datos (vim-dadbod)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🚀 **EasyMotion**	KEYMAPS.md	/^## 🚀 **EasyMotion**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🚀 Comandos Útiles	README.md	/^## 🚀 Comandos Útiles$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🚀 Configuración de Neovim con vim-plug	README.md	/^# 🚀 Configuración de Neovim con vim-plug$/;"	c
+🚀 Flujo de Trabajo Recomendado	REVISION_COMPLETA_2024.md	/^### 🚀 Flujo de Trabajo Recomendado$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""💡 Consejos de Uso Óptimo
+🚀 Rendimiento	REVISION_COMPLETA_2024.md	/^## 🚀 Rendimiento$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🚀 Sistema Quick Switch	REVISION_COMPLETA_2024.md	/^### 🚀 Sistema Quick Switch$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎮 Sistema de Layouts (★★★★★ Funcionalidad Única)
+🚀 Stack Tecnológico Cubierto	REVISION_COMPLETA_2024.md	/^### 🚀 Stack Tecnológico Cubierto$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🔌 Análisis de Plugins (35+ plugins)
+🛠️ **Warp Terminal Integration**	KEYMAPS.md	/^## 🛠️ **Warp Terminal Integration**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🛠️ Configuraciones Destacadas	README.md	/^## 🛠️ Configuraciones Destacadas$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🛠️ Recomendaciones de Mejora	REVISION_COMPLETA_2024.md	/^## 🛠️ Recomendaciones de Mejora$/;"	s	chapter:📋 Reporte de Revisión Completa - Configuración Neovim
+🤖 **Avante.nvim (AI Assistant)**	KEYMAPS.md	/^## 🤖 **Avante.nvim (AI Assistant)**$/;"	s	chapter:🔥 Guía de Atajos de Teclado - Neovim
+🤖 Integración AI (Avante.nvim)	REVISION_COMPLETA_2024.md	/^### 🤖 Integración AI (Avante.nvim)$/;"	S	section:📋 Reporte de Revisión Completa - Configuración Neovim""🎓 Funcionalidades Avanzadas Únicas
+🤝 Contribuir	README.md	/^## 🤝 Contribuir$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug
+🩺 Verificación de Salud	README.md	/^## 🩺 Verificación de Salud$/;"	s	chapter:🚀 Configuración de Neovim con vim-plug

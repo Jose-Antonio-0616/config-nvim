@@ -37,9 +37,9 @@ sudo apt update
 print_info "Instalando herramientas de Python..."
 sudo apt install -y python3 python3-pip python3-venv python3-dev
 
-# Instalar herramientas de Python
-pip3 install --user black isort flake8 pylint autopep8
-print_success "Herramientas de Python instaladas"
+# Instalar Ruff (reemplaza black, isort, flake8, pylint)
+pip3 install --user ruff
+print_success "Herramientas de Python (Ruff) instaladas"
 
 # ============ Node.js y JavaScript ============
 print_info "Instalando Node.js y herramientas JavaScript..."
@@ -49,37 +49,19 @@ if ! command -v node &> /dev/null; then
     sudo apt install -y nodejs
 fi
 
-# Instalar herramientas globales de Node.js
-sudo npm install -g typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
-sudo npm install -g eslint prettier @tailwindcss/language-server
+# Instalar LSPs y formateadores globales de Node.js
+sudo npm install -g typescript eslint prettier @tailwindcss/language-server bash-language-server
 print_success "Node.js y herramientas JavaScript instaladas"
-
-# ============ PHP Development ============
-print_info "Instalando herramientas de PHP..."
-sudo apt install -y php php-cli php-mbstring php-xml php-pgsql php-mysql composer
-
-# Instalar Intelephense para PHP
-sudo npm install -g intelephense
-print_success "Herramientas de PHP instaladas"
-
-# ============ C++ Development ============
-print_info "Instalando herramientas de C++..."
-sudo apt install -y build-essential clang clang-format cmake gdb
-
-# Instalar ccls para C++
-sudo apt install -y ccls
-print_success "Herramientas de C++ instaladas"
 
 # ============ Database Tools ============
 print_info "Instalando herramientas de base de datos..."
+# (psql client es útil para Django, incluso si se usa pgAdmin)
 sudo apt install -y postgresql-client
-
-# Instalar SQL Language Server
-sudo npm install -g sql-language-server
 print_success "Herramientas de base de datos instaladas"
 
 # ============ General Development Tools ============
 print_info "Instalando herramientas generales..."
+# (fzf es dependencia, ripgrep y fd-find son usados por FZF y CoC)
 sudo apt install -y curl wget git fzf ripgrep fd-find tree jq
 print_success "Herramientas generales instaladas"
 
@@ -92,8 +74,8 @@ if [ ! -f package.json ]; then
   echo '{"dependencies":{}}' > package.json
 fi
 
-# Instalar extensiones de CoC
-npm install coc-python coc-tsserver coc-html coc-css coc-json coc-eslint coc-prettier coc-tailwindcss3
+# Instalar extensiones de CoC (lista 100% sincronizada con coc-settings.json)
+npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh
 print_success "Extensiones de CoC instaladas"
 
 # Regresar al directorio original
@@ -103,12 +85,10 @@ print_info ""
 print_success "¡Instalación de herramientas completada!"
 print_info ""
 print_info "📋 Herramientas instaladas:"
-print_info "  🐍 Python: black, isort, flake8, pylint"
-print_info "  🟨 JavaScript: typescript, eslint, prettier"
-print_info "  🐘 PHP: composer, intelephense"
-print_info "  ⚡ C++: clang, clang-format, ccls"
-print_info "  🗄️  Database: postgresql-client, sql-language-server"
-print_info "  🔧 CoC: python, tsserver, html, css, json, eslint, prettier, tailwindcss"
+print_info "  🐍 Python: ruff"
+print_info "  🟨 JavaScript: typescript, eslint, prettier, @tailwindcss/language-server"
+print_info "  🗄️  Database: postgresql-client"
+print_info "  🔧 CoC: pyright, ruff, tsserver, html, css, json, tailwindcss, emmet, sh"
 print_info ""
 print_info "🚀 Comandos útiles después de la instalación:"
 print_info "  :CocList extensions    - Ver extensiones instaladas"

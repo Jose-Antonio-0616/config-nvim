@@ -1,403 +1,172 @@
 # 🚀 Configuración de Neovim con vim-plug
 
-Una configuración modular y completa de Neovim optimizada para desarrollo.
+Una configuración modular y potente de Neovim optimizada para desarrollo, con un **sistema de layouts dinámicos** como funcionalidad principal.
+
+## 🌟 Funcionalidad Principal: Sistema de Layouts Dinámicos
+
+Esta configuración no solo organiza tu editor, sino que te permite crear, guardar y gestionar complejos arreglos de ventanas y terminales de forma interactiva.
+
+### 1. Layout de Desarrollo Predefinido (`<Space>dl`)
+Un layout listo para usar, inspirado en un flujo de trabajo de desarrollo web moderno.
+- **Ventana Principal (Izquierda)**: Para tu código principal.
+- **Ventana Secundaria (Arriba, Derecha)**: Para archivos relacionados, tests o referencias.
+- **Dos Terminales (Abajo)**:
+    - **Terminal 1**: Ideal para servidores de desarrollo (`npm start`, `django runserver`).
+    - **Terminal 2**: Para tests, comandos de git, etc.
+
+| Atajo | Acción |
+|-------|--------|
+| `<Space>dl` | Crear el Layout de Desarrollo |
+| `<Space>t1` | Alternar/Ir al Terminal 1 |
+| `<Space>t2` | Alternar/Ir al Terminal 2 |
+| `<Space>r1` | Ejecutar un comando en el Terminal 1 |
+| `<Space>r2` | Ejecutar un comando en el Terminal 2 |
+| `<Space>la` | Reajustar las proporciones del layout |
+
+### 2. Creador de Layouts Personalizados (`<Space>l...`)
+Crea tu propio layout paso a paso de forma interactiva.
+
+**Flujo de trabajo:**
+1.  Inicia con `<Space>lc`.
+2.  Usa los atajos para añadir divisiones y ventanas.
+3.  Guarda tu creación con `<Space>ls` para usarla más tarde.
+
+| Atajo | Acción |
+|-------|--------|
+| `<Space>lc` | **Iniciar** la creación de un layout |
+| `<Space>ln` | Ir al **siguiente paso** |
+| `<Space>lH` / `<Space>lV` | Añadir división **Horizontal** / **Vertical** |
+| `<Space>lT` | Añadir una **Terminal** |
+| `<Space>le` | Añadir un **Editor** |
+| `<Space>ld` | **Terminar** la creación |
+| `<Space>ls` | **Guardar** el layout actual |
+| `<Space>ll` | **Cargar** un layout guardado |
+| `<Space>lq` | **Cerrar todas las ventanas** y volver a una sola |
+| `<Space>li` | Mostrar **información** del layout actual |
+
+---
 
 ## 📁 Estructura de Archivos
 
 ```
 ~/.config/nvim/
-├── init.vim              # Archivo principal que carga todos los módulos
+├── init.vim              # Archivo principal que carga los módulos
 ├── basic-config.vim      # Configuraciones básicas de Neovim
 ├── plugins.vim           # Gestión de plugins con vim-plug
-├── plugin-config.vim     # Configuración específica de plugins
-├── maps.vim              # Mapeos de teclas personalizados
+├── plugin-config.vim     # Configuración de plugins y LUA
+├── maps.vim              # Mapeos de teclas principales
+├── which-key-config.vim  # Configuración del menú de atajos
 ├── coc-settings.json     # Configuración de CoC.nvim
-├── install.sh            # Script de instalación automática
+├── install.sh            # Script de instalación
+├── KEYMAPS.md            # Guía completa de atajos (¡Actualizada!)
 └── README.md             # Esta documentación
 ```
 
 ## ⚡ Instalación Rápida
 
 ```bash
-# Ejecutar el script de instalación
+# Clona o copia la configuración en ~/.config/nvim
+# Luego ejecuta el script de instalación
 cd ~/.config/nvim
 ./install.sh
 ```
+*El script intentará instalar `vim-plug` y los plugins automáticamente.*
 
 ## 🔌 Plugins Incluidos
 
 ### **Apariencia**
-- `paulo-granthon/hyper.nvim` - Tema hyper (con fallback)
-- `vim-airline/vim-airline` - Barra de estado mejorada
-- `vim-airline/vim-airline-themes` - Temas para airline
-- `ryanoasis/vim-devicons` - Iconos para archivos
+- `paulo-granthon/hyper.nvim`: Tema principal.
+- `vim-airline/vim-airline` + `vim-airline-themes`: Barra de estado mejorada.
+- `nvim-tree/nvim-web-devicons`: Iconos para la interfaz.
+- `luochen1990/rainbow`: Paréntesis y brackets coloreados.
 
-### **Navegación**
-- `preservim/nerdtree` - Explorador de archivos
-- `junegunn/fzf` + `junegunn/fzf.vim` - Búsqueda fuzzy
-- `easymotion/vim-easymotion` - Movimientos rápidos
-- `preservim/tagbar` - Navegador de tags
+### **Navegación y Búsqueda**
+- `preservim/nerdtree`: Explorador de archivos clásico.
+- `junegunn/fzf` + `junegunn/fzf.vim`: Búsqueda "fuzzy" ultra-rápida.
+- `easymotion/vim-easymotion`: Movimientos rápidos en pantalla.
+- `preservim/tagbar`: Navegador de tags y estructura de código.
 
-### **Edición**
-- `tpope/vim-commentary` - Comentarios rápidos
-- `tpope/vim-surround` - Manipular delimitadores
-- `jiangmiao/auto-pairs` - Auto-completado de pares
-- `luochen1990/rainbow` - Brackets coloridos
+### **Edición y Productividad**
+- `tpope/vim-commentary`: Comentar y descomentar código fácilmente.
+- `tpope/vim-surround`: Manipular "alrededores" (comillas, paréntesis, etc.).
+- `jiangmiao/auto-pairs`: Cierre automático de pares (`()`, `[]`, `""`).
+- `mattn/emmet-vim`: Expansión de abreviaturas HTML/CSS.
 
 ### **Git**
-- `tpope/vim-fugitive` - Integración completa con Git
-- `airblade/vim-gitgutter` - Mostrar cambios de Git
+- `tpope/vim-fugitive`: Integración completa con Git.
+- `airblade/vim-gitgutter`: Muestra los cambios de Git en el lateral.
 
 ### **LSP y Autocompletado**
-- `neoclide/coc.nvim` - LSP y autocompletado inteligente
-- `dense-analysis/ale` - Linting asíncrono
+- `neoclide/coc.nvim`: Framework de autocompletado y LSP.
+- `nvim-treesitter/nvim-treesitter`: Resaltado de sintaxis avanzado y preciso.
 
 ### **Utilidades**
-- `mbbill/undotree` - Historial visual de cambios
-- `vimwiki/vimwiki` - Wiki personal
-- `nvim-treesitter/nvim-treesitter` - Syntax highlighting mejorado
-- `yetone/avante.nvim` - Asistente AI (requiere Node.js)
+- `mbbill/undotree`: Visualizador del historial de cambios (árbol de "undo").
+- `folke/which-key.nvim`: Menú emergente que muestra los atajos de teclado disponibles.
+- `stevearc/dressing.nvim`: Mejora la interfaz de usuario para `vim.ui.input` y `select`.
+- `nvim-lua/plenary.nvim` y `MunifTanjim/nui.nvim`: Dependencias para otros plugins.
 
-## ⌨️ Atajos de Teclado
+## ⌨️ Atajos de Teclado Esenciales
 
-### **Leader Key: `<Space>`**
+> Para una lista completa y actualizada, consulta el archivo **`KEYMAPS.md`**.
 
-### **Básicos**
 | Atajo | Acción |
 |-------|--------|
-| `<Space>w` | Guardar archivo |
-| `<Space>q` | Salir sin guardar |
-| `<Space>wq` | Guardar y salir |
-| `<Space>r` | Recargar configuración |
-
-### **Navegación entre ventanas**
-| Atajo | Acción |
-|-------|--------|
-| `Ctrl+h/j/k/l` | Moverse entre ventanas |
-| `Ctrl+←/→/↑/↓` | Redimensionar ventanas |
-
-### **Buffers**
-| Atajo | Acción |
-|-------|--------|
-| `<Space>bn` | Buffer siguiente |
-| `<Space>bp` | Buffer anterior |
-| `<Space>bd` | Cerrar buffer |
-
-### **Plugins**
-
-#### **NERDTree**
-| Atajo | Acción |
-|-------|--------|
-| `F3` o `<Space>e` | Toggle NERDTree |
-| `<Space>f` | Encontrar archivo actual en NERDTree |
-
-#### **FZF**
-| Atajo | Acción |
-|-------|--------|
-| `Ctrl+p` o `<Space>ff` | Buscar archivos |
-| `<Space>fg` | Buscar archivos Git |
-| `<Space>fb` | Buscar buffers |
-| `<Space>fl` | Buscar líneas |
-
-#### **Git**
-| Atajo | Acción |
-|-------|--------|
-| `<Space>ga` | Git add . |
-| `<Space>gc` | Git commit |
-| `<Space>gst` | Git status |
-| `<Space>gsh` | Git push |
-| `<Space>gll` | Git pull |
-| `<Space>gn/gp` | Siguiente/Anterior hunk |
-
-#### **CoC.nvim (LSP)**
-| Atajo | Acción |
-|-------|--------|
-| `gd` | Ir a definición |
-| `gr` | Ver referencias |
-| `K` | Mostrar documentación |
-| `<Space>rn` | Renombrar símbolo |
-| `[g` / `]g` | Navegar diagnósticos |
-
-#### **EasyMotion**
-| Atajo | Acción |
-|-------|--------|
-| `<Space><Space>w` | Saltar a palabra |
-| `<Space><Space>f` | Saltar a caracter |
-| `<Space><Space>j/k` | Saltar por líneas |
-
-### **Utilidades**
-| Atajo | Acción |
-|-------|--------|
-| `F5` | Toggle UndoTree |
-| `F8` | Toggle Tagbar |
-| `<Space>te` | Abrir terminal |
-|| `<Space><Space>` | Limpiar búsqueda |
-
-### **Python & Entornos Virtuales**
-| Atajo | Acción |
-|-------|--------|
-| `<Space>py` | Ejecutar Python |
-| `<Space>pv` | Ejecutar Python con entorno virtual |
-| `<Space>ds` | Django runserver |
-| `<Space>dm` | Django makemigrations |
-| `<Space>dmi` | Django migrate |
-| `<Space>va` | Activar entorno virtual myenv |
-| `<Space>vc` | Activar entorno virtual personalizado |
-| `<Space>vw` | Mostrar entorno virtual activo |
-| `<Space>pi` | Instalar paquete Python |
-
-### **Layout de Desarrollo (Como en la imagen)**
-| Atajo | Acción |
-|-------|--------|
-| `<Space>dl` | Crear layout completo (Editor + 2 terminales) |
-| `<Space>t1` | Ir a terminal inferior |
-| `<Space>t2` | Ir a terminal lateral |
-| `<Space>dr` | Django runserver en terminal inferior |
-| `<Space>dt` | Ejecutar tests en terminal lateral |
-| `<Space>r1` | Ejecutar comando personalizado en terminal 1 |
-| `<Space>r2` | Ejecutar comando personalizado en terminal 2 |
-| `Alt+1` | Ventana principal de código |
-| `Alt+2` | Terminal lateral |
-| `Alt+3` | Terminal inferior |
+| `<Space>` | **Leader Key**: Inicia la mayoría de los atajos. |
+| `<Space>w` | Guardar archivo. |
+| `<Space>q` | Salir sin guardar. |
+| `<Space>R` | Recargar la configuración de Neovim. |
+| `F3` | Alternar el explorador de archivos (NERDTree). |
+| `Ctrl+p` | Buscar archivos en el proyecto (FZF). |
+| `<Space>f` | Formatear código (CoC). |
+| `<Space>g` | Menú de Git (Fugitive). |
+| `<Space>l` | Menú del Sistema de Layouts. |
+| `<Space>?` | Mostrar menú de atajos (WhichKey). |
 
 ## 🐍 Entornos Virtuales de Python
 
-### **Detección Automática**
-Neovim detecta automáticamente entornos virtuales en:
-- `./myenv/` - Tu entorno preferido
-- `./venv/`, `./env/`, `./.venv/`
-- Variable de entorno `$VIRTUAL_ENV`
+Esta configuración detecta y utiliza automáticamente el intérprete de Python de los entornos virtuales.
+- **Detección automática** al abrir archivos `.py`.
+- **Indicador en la barra de estado** (Airline) que muestra el entorno activo.
+- **Integración con CoC.nvim** para que el autocompletado y el linting usen las librerías del entorno.
 
-### **Características**
-- **Auto-detección** al abrir archivos Python
-- **Statusline** muestra el entorno activo
-- **CoC integration** usa el Python del entorno
-- **Linting** con las librerías del entorno
+**Uso:**
+1.  Crea tu entorno (`python -m venv .venv`).
+2.  Actívalo en tu shell (`source .venv/bin/activate`).
+3.  Abre Neovim. El entorno será detectado y utilizado automáticamente.
 
-### **Crear proyecto de ejemplo**
+## 📦 Dependencias
+
+### **Requeridas**
+- **Neovim 0.5+**
+- **Git**
+- **curl** o **wget** (para instalar vim-plug)
+
+### **Para Funcionalidad Completa**
+- **Node.js y npm**: Absolutamente necesario para `coc.nvim`.
+- **Python 3 y pip**: Para proveedores de Neovim y algunos LSPs.
+- **fzf**: Para la búsqueda fuzzy.
+- **ripgrep**: Recomendado para que `fzf` sea más rápido.
+- **Una Nerd Font**: Para que los iconos se muestren correctamente.
+
 ```bash
-# Crear proyecto de ejemplo con entorno virtual
-cd ~/.config/nvim
-./create-venv-example.sh
+# Ejemplo de instalación en Debian/Ubuntu
+sudo apt update
+sudo apt install nodejs npm python3-pip fzf ripgrep
 ```
 
-### **Uso típico**
-1. Crear entorno: `python3 -m venv myenv`
-2. Activar en terminal: `source myenv/bin/activate`
-3. Abrir Neovim: `nvim archivo.py`
-4. Activar en Neovim: `<Space>va`
-
-## 🛠️ Configuraciones Destacadas
-
-### **Interfaz**
-- Números de línea relativos
-- Línea guía en columna 80
-- Resaltado de línea actual
-- Soporte para true color
-
-### **Edición**
-- Espacios en lugar de tabs (4 espacios)
-- Auto-indentación inteligente
-- Eliminar espacios al final automáticamente
-- Historial de deshacer persistente
-
-### **Búsqueda**
-- Búsqueda incremental e inteligente
-- Ignora mayúsculas a menos que se especifique
-- Resaltado de resultados
-
-## 🔧 Personalización
-
-### **Cambiar tema**
-Edita `plugin-config.vim`:
+### **Language Servers (LSP)**
+Debes instalarlos a través de `coc.nvim` para obtener autocompletado específico del lenguaje.
 ```vim
-colorscheme tu_tema_preferido
-```
-
-### **Modificar atajos**
-Edita `maps.vim` para personalizar los mapeos de teclas.
-
-### **Agregar plugins**
-1. Agrega el plugin en `plugins.vim`
-2. Configúralo en `plugin-config.vim`
-3. Ejecuta `:PlugInstall` en Neovim
-
-## 📦 Dependencias Opcionales
-
-### **Para funcionalidad completa:**
-```bash
-# Node.js (para CoC y Avante)
-sudo apt install nodejs npm
-
-# Python (para algunos plugins)
-sudo apt install python3 python3-pip
-
-# FZF (búsqueda fuzzy)
-sudo apt install fzf
-
-# Ripgrep (búsqueda más rápida)
-sudo apt install ripgrep
-
-# Language servers para CoC
-:CocInstall coc-python coc-tsserver coc-html coc-css coc-json
-```
-
-## 🚀 Comandos Útiles
-
-### **vim-plug**
-```vim
-:PlugInstall    " Instalar plugins
-:PlugUpdate     " Actualizar plugins
-:PlugClean      " Limpiar plugins no utilizados
-:PlugStatus     " Ver estado de plugins
-```
-
-### **CoC.nvim**
-```vim
-:CocInstall <extension>   " Instalar extensión
-:CocList extensions       " Ver extensiones
-:CocRestart              " Reiniciar CoC
-:CocConfig               " Editar configuración
-```
-
-## 🩺 Verificación de Salud
-
-### **Verificación Rápida**
-Ejecuta el script de verificación incluido:
-
-```bash
-# Verificar estado general de Neovim
-~/.config/nvim/health-check.sh
-```
-
-### **Verificación Completa de Neovim**
-```bash
-# Verificación completa de salud
-nvim +checkhealth
-
-# Solo verificar problemas de deprecación
-nvim +"checkhealth vim.deprecated"
+" Dentro de Neovim, ejecuta:
+:CocInstall coc-pyright coc-tsserver coc-json coc-html coc-css
 ```
 
 ## 🐛 Solución de Problemas
 
-### **Advertencias de Deprecación**
-Si ves advertencias sobre `client.notify` o `client.request`, es probable que tengas ALE y CoC.nvim corriendo simultáneamente:
-
-```bash
-# Deshabilitar ALE (recomendado si usas CoC.nvim)
-nvim ~/.config/nvim/plugins.vim
-# Comentar la línea: Plug 'dense-analysis/ale'
-
-# Limpiar plugins no utilizados
-nvim +PlugClean!
-```
-
-### **Error 'Reflect.hasOwnMetadata is not a function'**
-Este error indica que faltan dependencias de Node.js para CoC.nvim:
-
-```bash
-# Reparar CoC.nvim automáticamente
-~/.config/nvim/fix-coc.sh
-
-# O manualmente:
-cd ~/.local/share/nvim/plugged/coc.nvim
-npm install reflect-metadata typescript
-```
-
-### **Reinstalar Extensiones de CoC**
-Si hay problemas con Python LSP:
-
-```bash
-# Reinstalar extensiones Python para CoC
-nvim +"CocInstall coc-pyright coc-python"
-```
-
-### **Tema no carga**
-Si el tema `hyper` no está disponible, la configuración usará el tema por defecto.
-
-### **CoC no funciona**
-Verifica que Node.js esté instalado:
-```bash
-node --version
-npm --version
-```
-
-### **FZF no funciona**
-Instala fzf:
-```bash
-sudo apt install fzf
-```
-
-### **Iconos no se muestran**
-Instala una fuente con iconos como Nerd Fonts.
-
-## 💻 Layout de Desarrollo (Como tu imagen)
-
-### **¿Qué es el Layout de Desarrollo?**
-Una configuración que simula tu flujo de trabajo con múltiples tabs en Warp Terminal:
-- **Ventana principal**: Editor de código (como tu tab principal)
-- **Terminal inferior**: Para Django runserver (como tu tab pequeño inferior)
-- **Terminal lateral**: Para tests y comandos (como tu tab pequeño lateral)
-
-### **Crear el Layout**
-```bash
-# Demostración completa
-~/.config/nvim/demo-layout.sh
-
-# O manualmente en Neovim:
-# 1. Abrir archivo: nvim app.py
-# 2. Crear layout: <Space>dl
-```
-
-### **Flujo de Trabajo Típico**
-
-1. **Inicio del proyecto**:
-   ```bash
-   cd mi-proyecto-django
-   nvim manage.py
-   ```
-
-2. **Configurar layout** (`<Space>dl`):
-   - Se crean automáticamente 3 ventanas
-   - Terminales configurados sin números de línea
-   - Navegación optimizada entre ventanas
-
-3. **Activar entorno virtual** (`<Space>dva`):
-   - Activa el entorno en ambos terminales
-   - Mantiene consistencia en todo el proyecto
-
-4. **Desarrollo activo**:
-   - `<Space>dr` → Django runserver (terminal inferior)
-   - `<Space>dt` → Ejecutar tests (terminal lateral)
-   - `Alt+1/2/3` → Cambiar rápido entre ventanas
-
-### **Ventajas del Layout Integrado**
-- ✅ **Un solo Neovim** en lugar de múltiples tabs
-- ✅ **Terminales persistentes** que no se cierran
-- ✅ **Comandos especializados** para cada terminal
-- ✅ **Navegación ultra-rápida** con Alt+números
-- ✅ **Entorno virtual sincronizado**
-- ✅ **Estado compartido** entre editor y terminales
-
-### **Personalización del Layout**
-Puedes modificar las funciones en `plugin-config.vim` para:
-- Cambiar el tamaño de los terminales
-- Agregar más terminales especializados
-- Personalizar los comandos por defecto
-- Ajustar la navegación entre ventanas
-
-## 🤝 Contribuir
-
-1. Haz un fork del proyecto
-2. Crea una rama para tu feature
-3. Haz commit de tus cambios
-4. Push a la rama
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Esta configuración está bajo la licencia MIT. Siéntete libre de usarla y modificarla.
+- **Los iconos no se ven bien**: Asegúrate de tener una [Nerd Font](https://www.nerdfonts.com/) instalada y configurada en tu terminal.
+- **`coc.nvim` no funciona**: Verifica que Node.js esté instalado (`node --version`). Si da error, entra en el directorio de CoC y reinstala sus dependencias: `cd ~/.local/share/nvim/plugged/coc.nvim && npm install`.
+- **FZF no funciona**: Asegúrate de que `fzf` esté instalado y accesible en tu `PATH`.
 
 ---
 

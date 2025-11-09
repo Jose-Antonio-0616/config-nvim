@@ -1,57 +1,40 @@
-" =====================================================
-" which-key-config.vim - Configuración del menú de atajos
-" =====================================================
-
-" Configuración ultra-simple de which-key
+" ============ Which-key (Menú de atajos) ============
 lua << EOF
 local status_ok, wk = pcall(require, "which-key")
 if not status_ok then
   return
 end
 
--- Configuración mínima
-wk.setup()
+-- Configuración general
+wk.setup({
+  preset = "modern",
+  icons = {
+    group = " +", -- Para que se vea "+ Git"
+  },
+})
 
--- Registrar solo los mapeos básicos del leader
+-- Registra los nombres de los GRUPOS
 wk.register({
-  w = { ":w<cr>", "Guardar" },
-  q = { ":q!<cr>", "Salir" },
-  e = { ":NERDTreeToggle<cr>", "Explorador" },
-  r = { ":source $MYVIMRC<cr>", "Recargar" },
-  [" "] = { ":nohlsearch<cr>", "Limpiar búsqueda" },
-  
-  f = {
-    name = "+ Archivos",
-    f = { ":Files<cr>", "Buscar archivos" },
-    g = { ":GFiles<cr>", "Archivos Git" },
-    b = { ":Buffers<cr>", "Buffers" },
-  },
-  
-  g = {
-    name = "+ Git",
-    a = { ":Git add .<cr>", "Add todo" },
-    c = { ":Git commit<cr>", "Commit" },
-    s = { ":Git status<cr>", "Status" },
-    p = { ":Git push<cr>", "Push" },
-    l = { ":Git pull<cr>", "Pull" },
-  },
-  
-  b = {
-    name = "+ Buffers",
-    n = { ":bnext<cr>", "Siguiente" },
-    p = { ":bprevious<cr>", "Anterior" },
-    d = { ":bdelete<cr>", "Eliminar" },
-  },
-  
-  t = {
-    name = "+ Herramientas",
-    e = { ":terminal<cr>", "Terminal" },
-    t = { ":TagbarToggle<cr>", "Tagbar" },
-  },
-  
-  u = { ":UndotreeToggle<cr>", "Historial" },
-  n = { ":set number!<cr>", "Números" },
-  s = { ":%s//gc<left><left><left>", "Buscar/Reemplazar" },
+  b = { name = "+ Buffers" },
+  d = { name = "+ Layout Dev" },
+  f = { name = "+ FZF / Formato" },
+  g = { name = "+ Git" },
+  l = { name = "+ Layouts Custom" },
+  r = { name = "+ Ejecutar (Run)" },
+  t = { name = "+ Terminal" },
+  ["<leader>"] = { name = "+ EasyMotion" }, -- Para <leader><leader>
 }, { prefix = "<leader>" })
 
+-- Registra las descripciones de las TECLAS ÚNICAS
+wk.register({
+  c = "Limpiar Búsqueda",
+  e = "Explorador (Buscar)",
+  q = "Salir",
+  R = "Recargar Config",
+  s = "Buscar/Reemplazar",
+  w = " Guardar",
+  h = " HTML",
+  rn = "Renombrar",
+  ["?"] = "Ayuda",
+}, { prefix = "<leader>" })
 EOF

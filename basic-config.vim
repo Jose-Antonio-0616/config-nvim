@@ -84,22 +84,12 @@ set showmode                    " Mostrar modo actual
 " Espacios para diferentes tipos de archivo
 " Web development (2 espacios)
 autocmd FileType html,css,scss,sass,less,javascript,typescript,json setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascriptreact,typescriptreact,jsx,tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType yaml,yml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python (4 espacios - PEP8)
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 textwidth=88
 autocmd FileType python setlocal foldmethod=indent
-
-" PHP (4 espacios)
-autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
-
-" C++ (2 o 4 espacios según preferencia)
-autocmd FileType cpp,c setlocal shiftwidth=4 tabstop=4 softtabstop=4
-
-" SQL (2 espacios)
-autocmd FileType sql,pgsql,mysql setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Makefiles requieren tabs reales
 autocmd FileType make setlocal noexpandtab
@@ -116,82 +106,4 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " ============ Configuraciones de rendimiento ============
 set lazyredraw                  " No redibujar durante macros
 set ttyfast                     " Terminal rápida
-set synmaxcol=200              " Limitar sintaxis a 200 columnas
-
-" ============ Configuraciones de terminal ============
-if has('nvim')
-    " Configuraciones específicas de Neovim
-    set inccommand=split        " Vista previa de sustituciones
-    
-    " ============ Integración con Warp Terminal ============
-    " Detectar si estamos en Warp Terminal
-    if $TERM_PROGRAM ==# 'WarpTerminal' || exists('$WARP_TERMINAL_SESSION_ID')
-        " Configuraciones específicas para Warp
-        set title                    " Habilitar título de ventana
-        set titlestring=Neovim:\ %F   " Formato del título
-        
-        " Optimizaciones para Warp
-        set ttyfast                  " Terminal rápida
-        set lazyredraw               " No redibujar durante macros
-        
-        " Cursor shapes para Warp (mejor integración visual)
-        let &t_SI = "\e[6 q"        " Insert mode: line cursor
-        let &t_EI = "\e[2 q"        " Normal mode: block cursor
-        let &t_SR = "\e[4 q"        " Replace mode: underline cursor
-        
-        " Soporte mejorado para colores en Warp
-        if has('termguicolors')
-            set termguicolors
-            " Forzar soporte para colores RGB
-            let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-            let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-        endif
-        
-        " Configuraciones de clipboard para Warp
-        if has('clipboard')
-            set clipboard=unnamedplus
-            " Optimizar para Warp's clipboard integration
-            let g:clipboard = {
-                \ 'name': 'warp-clipboard',
-                \ 'copy': {
-                \   '+': 'wl-copy --type text/plain',
-                \   '*': 'wl-copy --type text/plain --primary',
-                \ },
-                \ 'paste': {
-                \   '+': 'wl-paste --no-newline',
-                \   '*': 'wl-paste --no-newline --primary',
-                \ },
-                \ 'cache_enabled': 1,
-                \ }
-        endif
-        
-        " Configuraciones de mouse optimizadas para Warp
-        set mouse=a
-        set mousemodel=popup
-        
-        " Configurar escape sequences para mejor responsividad
-        set ttimeout
-        set ttimeoutlen=50
-        
-        " Soporte para notificaciones de Warp
-        if executable('warp-notify')
-            function! WarpNotify(message, level)
-                silent! call system('warp-notify "' . a:message . '" --level ' . a:level)
-            endfunction
-        endif
-        
-        " Integración con Warp AI
-        if exists('$WARP_AI_ENABLED')
-            " Configuraciones para AI features de Warp
-            set showmode                 " Mostrar modo para AI context
-            set showcmd                  " Mostrar comandos para AI context
-        endif
-        
-        echo "🚀 Warp Terminal detected - optimizations enabled"
-    else
-        " Configuraciones para otros terminales
-        if has('termguicolors')
-            set termguicolors
-        endif
-    endif
-endif
+set synmaxcol=200               " Limitar sintaxis a 200 columnas

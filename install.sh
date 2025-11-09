@@ -46,11 +46,12 @@ fi
 
 # Crear directorios necesarios
 print_info "Creando directorios necesarios..."
-mkdir -p ~/.local/share/nvim/{site/autoload,plugged,undodir}
-mkdir -p ~/vimwiki
+# CORREGIDO: 'undo' en lugar de 'undodir' y 'vimwiki' eliminado
+mkdir -p ~/.local/share/nvim/{site/autoload,plugged,undo}
 
 # Configurar permisos para directorio de undo
-chmod 700 ~/.local/share/nvim/undodir
+# CORREGIDO: 'undo' en lugar de 'undodir'
+chmod 700 ~/.local/share/nvim/undo
 
 print_success "Directorios creados"
 
@@ -65,15 +66,15 @@ else
     print_success "vim-plug ya está instalado"
 fi
 
-# Verificar Node.js para CoC y Avante
+# Verificar Node.js para CoC
 print_info "Verificando Node.js..."
 if command -v node &> /dev/null; then
     NODE_VERSION=$(node -v)
     print_success "Node.js encontrado: $NODE_VERSION"
 else
-    print_warning "Node.js no encontrado. Algunos plugins (CoC, Avante) pueden no funcionar correctamente."
-    print_info "Para instalar Node.js en Linux Mint:"
-    print_info "  sudo apt update && sudo apt install nodejs npm"
+    print_warning "Node.js no encontrado. Algunos plugins (CoC) pueden no funcionar correctamente."
+    print_info "  Para instalar Node.js en Linux Mint:"
+    print_info "    sudo apt update && sudo apt install nodejs npm"
 fi
 
 # Verificar Python para algunos plugins
@@ -99,7 +100,7 @@ if command -v fzf &> /dev/null; then
     print_success "fzf encontrado"
 else
     print_warning "fzf no encontrado. Para instalarlo:"
-    print_info "  sudo apt install fzf"
+    print_info "    sudo apt install fzf"
 fi
 
 # Instalar plugins
@@ -115,15 +116,17 @@ print_info ""
 print_info "📋 Información importante:"
 print_info "  • Leader key: Espacio"
 print_info "  • Archivos de configuración en: ~/.config/nvim/"
-print_info "  • Para abrir NERDTree: <Space>e o F3"
+# CORREGIDO: Eliminado <Space>e
+print_info "  • Para abrir NERDTree: F3"
 print_info "  • Para búsqueda de archivos: Ctrl+p"
 print_info "  • Para ver todos los atajos: ver maps.vim"
 print_info ""
 print_info "🔧 Comandos útiles:"
-print_info "  :PlugInstall  - Instalar plugins"
-print_info "  :PlugUpdate   - Actualizar plugins"
-print_info "  :PlugClean    - Limpiar plugins no utilizados"
-print_info "  :CocInstall coc-python coc-tsserver coc-html coc-css coc-json"
+print_info "  :PlugInstall   - Instalar plugins"
+print_info "  :PlugUpdate    - Actualizar plugins"
+print_info "  :PlugClean     - Limpiar plugins no utilizados"
+# CORREGIDO: Lista de extensiones de CoC actualizada
+print_info "  :CocInstall coc-pyright @yaegassy/coc-ruff coc-tsserver coc-html coc-css coc-json coc-tailwindcss coc-emmet coc-sh"
 print_info ""
 print_warning "Nota: Algunos plugins pueden requerir configuración adicional o dependencias externas."
 
