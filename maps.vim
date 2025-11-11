@@ -182,6 +182,12 @@ nnoremap <leader>ls :call SaveCustomLayout()<CR>
 nnoremap <leader>ll :call LoadCustomLayout()<CR>
 nnoremap <leader>lm :call ManageCustomLayouts()<CR>
 
+" ============ Quarto y REPL (Iron) ============
+" Nuevo grupo <leader>p (Quarto)
+nnoremap <leader>pp <Cmd>QuartoPreview<CR>     " Previsualizar Quarto
+nnoremap <leader>ps <Cmd>QuartoClosePreview<CR> " Detener Previsualización
+nnoremap <leader>pr <Cmd>QuartoRender<CR>      " Renderizar Quarto
+
 " ============ Which-key (Menú de ayuda) ============
 " Mostrar menú de atajos
 nnoremap <leader>? :WhichKey<CR>

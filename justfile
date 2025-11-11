@@ -17,5 +17,5 @@ push:
 # Flujo completo: add, commit y push
 save msg:
     @just add
-    @just commit msg
+    @just commit "{{msg}}"
     @just push

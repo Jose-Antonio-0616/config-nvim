@@ -742,6 +742,67 @@ autocmd FileType html,css,javascript,typescript EmmetInstall
 let g:clang_format#auto_format = 0
 let g:clang_format#auto_format_on_insert_leave = 0
 
+" ============ Configuración de Quarto y Iron (LUA) ============
+
+lua << EOF
+local otter_ok, otter = pcall(require, "otter")
+if not otter_ok then
+    vim.notify("otter.nvim no se pudo cargar", vim.log.levels.WARN)
+    return
+end
+otter.setup({
+    buffers = {},
+})
+
+local quarto_ok, quarto = pcall(require, "quarto")
+if not quarto_ok then
+    vim.notify("quarto-nvim no se pudo cargar", vim.log.levels.WARN)
+    return
+end
+quarto.setup({
+    lspFeatures = {
+        languages = { "python", "bash", "html" }, 
+    },
+    codeRunner = {
+        enabled = true,
+        default_method = "iron",
+        ft_runners = { 
+            quarto = "iron", 
+            python = "iron",
+        },
+        never_run = { "yaml"},
+    },
+})
+
+local iron_ok, iron = pcall(require, "iron.core")
+if not iron_ok then
+    vim.notify("iron.nvim no se pudo cargar", vim.log.levels.WARN)
+    return
+end
+iron.setup({
+    config = {
+        scratch_repl   = true,
+        repl_definition = {
+            python = {
+                command = { "ipython", "--no-autoindent" },
+                format = require("iron.fts.common").brackets_paste_python,
+                block_dividers = { "# %%", "#%%"},
+            },
+            quarto = {
+                command = { "ipython", "--no-autoindent" },
+                format = require("iron.fts.common").brackets_paste_python,
+                block_dividers = { "# %%", "#%%", "```", "```{python}"},
+            }
+        },
+        repl_filetype = function(bufnr, ft) return ft end,
+        dap_integration = true,
+        repl_open_cmd = require("iron.view").split.vertical.rightbelow("%50"),
+        ignore_blank_lines = true,
+    },
+})
+
+EOF
+
 " ============ Which-key (Menú de atajos) ============
 if has('nvim-0.5')
     lua << EOF
@@ -838,10 +899,68 @@ require("which-key").setup({
         { "<leader>ll", function() vim.cmd("call LoadCustomLayout()") end, desc = "Cargar Custom" },
         { "<leader>lm", function() vim.cmd("call ManageCustomLayouts()") end, desc = "Gestionar Custom" },
 
-        -- Menú de Ejecución (Run)
+        -- MenÚ de Ejecución (Run)
         { "<leader>r", group = "+ Ejecutar (Run)" },
         { "<leader>r1", function() vim.cmd("call RunInTerminal(vim.fn.input('Comando T1: '), 1)") end, desc = "Run T1" },
         { "<leader>r2", function() vim.cmd("call RunInTerminal(vim.fn.input('Comando T2: '), 2)") end, desc = "Run T2" },
+
+        {
+            "<leader>rl",function()
+                if vim.bo.filetype == 'quarto' then
+                    require("quarto.runner").run_line()
+                else
+                    require("iron.core").send_line()
+                end
+            end, desc = "Correr Línea"
+        },
+
+        {
+            "<leader>rb", function()
+                if vim.bo.filetype == 'quarto' then
+                    require("quarto.runner").run_cell()
+                else
+                    require("iron.core").send_code_block()
+                end
+            end, desc = "Correr Celda/Bloque"
+        },
+
+        {
+            "<leader>rn", function()
+                if vim.bo.filetype == 'quarto' then
+                    require("quarto.runner").run_cell()
+                    vim.cmd("QuartoCellNext")
+                else
+                    require("iron.core").send_code_block_and_move()
+                end
+            end, desc = "Correr Bloque y Avanzar"
+        },
+
+        {
+            "<leader>r", mode = 'v',
+            function()
+                if vim.bo.filetype == 'quarto' then
+                    require("quarto.runner").run_range()
+                else
+                    require("iron.core").send_visual()
+                end
+            end, desc = "Correr Selección"
+        },
+
+        { 
+            "<leader>rr", function() 
+                if vim.bo.filetype == 'quarto' then
+                    vim.cmd("IronRepl python")
+                else
+                    vim.cmd("IronRepl") 
+                end 
+            end, desc = "Abrir/Cerrar REPL" 
+        },
+
+        -- Menú de Quarto -- NUEVO
+        { "<leader>p", group = "+ Quarto" },
+        { "<leader>pp", function() vim.cmd("QuartoPreview") end, desc = "Previsualizar Quarto" },
+        { "<leader>ps", function() vim.cmd("QuartoClosePreview") end, desc = "Detener Preview" },
+        { "<leader>pr", function() vim.cmd("QuartoRender") end, desc = "Renderizar Quarto" },
 
         -- Menú de EasyMotion
         { "<leader><leader>", group = "+ EasyMotion" },
