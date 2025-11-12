@@ -46,11 +46,9 @@ fi
 
 # Crear directorios necesarios
 print_info "Creando directorios necesarios..."
-# CORREGIDO: 'undo' en lugar de 'undodir' y 'vimwiki' eliminado
 mkdir -p ~/.local/share/nvim/{site/autoload,plugged,undo}
 
 # Configurar permisos para directorio de undo
-# CORREGIDO: 'undo' en lugar de 'undodir'
 chmod 700 ~/.local/share/nvim/undo
 
 print_success "Directorios creados"
@@ -116,17 +114,14 @@ print_info ""
 print_info "📋 Información importante:"
 print_info "  • Leader key: Espacio"
 print_info "  • Archivos de configuración en: ~/.config/nvim/"
-# CORREGIDO: Eliminado <Space>e
 print_info "  • Para abrir NERDTree: F3"
 print_info "  • Para búsqueda de archivos: Ctrl+p"
 print_info "  • Para ver todos los atajos: ver maps.vim"
 print_info ""
 print_info "🔧 Comandos útiles:"
-print_info "  :PlugInstall   - Instalar plugins"
-print_info "  :PlugUpdate    - Actualizar plugins"
-print_info "  :PlugClean     - Limpiar plugins no utilizados"
-# CORREGIDO: Lista de extensiones de CoC actualizada
-print_info "  :CocInstall coc-pyright @yaegassy/coc-ruff coc-tsserver coc-html coc-css coc-json coc-tailwindcss coc-emmet coc-sh"
+print_info "  :PlugInstall     - Instalar plugins"
+print_info "  :PlugUpdate      - Actualizar plugins"
+print_info "  :PlugClean       - Limpiar plugins no utilizados"
 print_info ""
 print_warning "Nota: Algunos plugins pueden requerir configuración adicional o dependencias externas."
 

@@ -9,9 +9,10 @@
     "coc-ruff",
     "coc-pyright",
     "coc-sh"
+    "coc-prettier"
   ],
 
-  // --- Configuraciones de Sugerencias (Están bien) ---
+  // --- Configuraciones de Sugerencias ---
   "suggest.noselect": false,
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
@@ -23,15 +24,33 @@
     "rounded": true
   },
 
-  // --- Formateo al Guardar (Limpio) ---
+  // --- Formateo al Guardar ---
   "coc.preferences.formatOnSaveFiletypes": [
+    "html",
     "css",
     "markdown",
     "javascript",
     "typescript",
     "json",
+    "htmldjango",
     "python"
   ],
+
+  "coc.formatters": {
+    "html": "prettier",
+    "css": "prettier",
+    "javascript": "prettier",
+    "typescript": "prettier",
+    "json": "prettier",
+    "markdown": "prettier",
+    "htmldjango": "djlint",
+    "python": "ruff"
+  },
+
+  "coc.actions.onSave": {
+    "source.fixAll.ruff": true,
+    "source.organizeImports.ruff":true
+  },
 
   // --- PYTHON (Configuración Moderna) ---
   "python.analysis.venvPath": ".",

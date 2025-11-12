@@ -37,10 +37,6 @@ sudo apt update
 print_info "Instalando herramientas de Python..."
 sudo apt install -y python3 python3-pip python3-venv python3-dev
 
-# Instalar Ruff (reemplaza black, isort, flake8, pylint)
-pip3 install --user ruff
-print_success "Herramientas de Python (Ruff) instaladas"
-
 # ============ Node.js y JavaScript ============
 print_info "Instalando Node.js y herramientas JavaScript..."
 # Verificar si Node.js ya está instalado
@@ -74,8 +70,8 @@ if [ ! -f package.json ]; then
   echo '{"dependencies":{}}' > package.json
 fi
 
-# Instalar extensiones de CoC (lista 100% sincronizada con coc-settings.json)
-npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh
+# Instalar extensiones de CoC
+npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh coc-prettier
 print_success "Extensiones de CoC instaladas"
 
 # Regresar al directorio original
@@ -85,13 +81,12 @@ print_info ""
 print_success "¡Instalación de herramientas completada!"
 print_info ""
 print_info "📋 Herramientas instaladas:"
-print_info "  🐍 Python: ruff"
 print_info "  🟨 JavaScript: typescript, eslint, prettier, @tailwindcss/language-server"
 print_info "  🗄️  Database: postgresql-client"
-print_info "  🔧 CoC: pyright, ruff, tsserver, html, css, json, tailwindcss, emmet, sh"
+print_info "  🔧 CoC: pyright, ruff, tsserver, html, css, json, tailwindcss, emmet, sh, prettier"
 print_info ""
 print_info "🚀 Comandos útiles después de la instalación:"
-print_info "  :CocList extensions    - Ver extensiones instaladas"
+print_info "  :CocList extensions     - Ver extensiones instaladas"
 print_info "  :CocRestart           - Reiniciar CoC si hay problemas"
 print_info "  :checkhealth          - Verificar salud de Neovim"
 print_info ""
