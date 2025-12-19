@@ -4,7 +4,7 @@
 
 " ============ Leader Key ============
 let mapleader = " "
-let maplocalleader = " "
+let maplocalleader = ","
 
 " ============ Mapeos Básicos ============
 " Guardar archivo
@@ -187,6 +187,15 @@ nnoremap <leader>lm :call ManageCustomLayouts()<CR>
 nnoremap <leader>pp <Cmd>QuartoPreview<CR>     " Previsualizar Quarto
 nnoremap <leader>ps <Cmd>QuartoClosePreview<CR> " Detener Previsualización
 nnoremap <leader>pr <Cmd>QuartoRender<CR>      " Renderizar Quarto
+
+" ============ LaTeX (VimTex) ============
+nnoremap <leader>xc :VimtexCompile<CR>
+nnoremap <leader>xv :VimtexView<CR>
+nnoremap <leader>xe :VimtexErrors<CR>
+nnoremap <leader>xk :VimtexStop<CR>
+nnoremap <leader>xl :VimtexClean<CR>
+nnoremap <leader>xt :VimtexTocToggle<CR>
+nnoremap <leader>xi :VimtexInfo<CR>
 
 " ============ Which-key (Menú de ayuda) ============
 " Mostrar menú de atajos

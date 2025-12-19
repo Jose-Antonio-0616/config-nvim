@@ -9,7 +9,8 @@
     "coc-ruff",
     "coc-pyright",
     "coc-sh"
-    "coc-prettier"
+    "coc-prettier",
+    "coc-texlab"
   ],
 
   // --- Configuraciones de Sugerencias ---

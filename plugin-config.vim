@@ -134,39 +134,34 @@ autocmd FileType apache setlocal commentstring=#\ %s
 
 " ============ Treesitter ============
 " Configuración completa de Treesitter para todo el stack
-if has('nvim-0.5')
+if isdirectory(expand('~/.local/share/nvim/plugged/nvim-treesitter/lua'))
     lua << EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    -- Lenguajes del stack (solo parsers verificados)
-    "python",
-    "html", "css", "javascript", "typescript",
-    -- Utilidades
-    "lua", "vim", "vimdoc", "query", "json", "yaml",
-    "bash", "markdown", "comment"
-  },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-  textobjects = {
-    enable = true,
-  },
-}
+    local status, ts = pcall(require, "nvim-treesitter.configs")
+    if status then
+        ts.setup {
+          ensure_installed = {
+            "python", "html", "css", "javascript", "typescript",
+            "lua", "vim", "vimdoc", "query", "json", "yaml",
+            "bash", "markdown", "comment"
+          },
+          sync_install = false,
+          auto_install = true,
+          highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+          },
+          indent = { enable = true },
+          incremental_selection = {
+            enable = true,
+            keymaps = {
+              init_selection = "gnn",
+              node_incremental = "grn",
+              scope_incremental = "grc",
+              node_decremental = "grm",
+            },
+          },
+        }
+    end
 EOF
 endif
 
@@ -742,6 +737,12 @@ autocmd FileType html,css,javascript,typescript EmmetInstall
 let g:clang_format#auto_format = 0
 let g:clang_format#auto_format_on_insert_leave = 0
 
+" ============ Latex ===============
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_quickfix_mode = 0
+
 " ============ Configuración de Quarto y Iron (LUA) ============
 
 lua << EOF
@@ -970,6 +971,17 @@ require("which-key").setup({
         { "<leader><leader>j", "<Plug>(easymotion-j)", desc = "Line Down" },
         { "<leader><leader>k", "<Plug>(easymotion-k)", desc = "Line Up" },
         { "<leader><leader>/", "<Plug>(easymotion-sn)", desc = "Search" },
+    
+        -- Menú de LaTeX
+        { "<leader>x", group = "+ LaTeX" },
+        { "<leader>xc", function() vim.cmd("VimtexCompile") end, desc = "Compilar (Toggle)" },
+        { "<leader>xv", function() vim.cmd("VimtexView") end, desc = "Ver PDF" },
+        { "<leader>xe", function() vim.cmd("VimtexErrors") end, desc = "Ver Errores" },
+        { "<leader>xk", function() vim.cmd("VimtexStop") end, desc = "Detener Compilación" },
+        { "<leader>xl", function() vim.cmd("VimtexClean") end, desc = "Limpiar Auxiliares" },
+        { "<leader>xt", function() vim.cmd("VimtexTocToggle") end, desc = "Índice (TOC)" },
+        { "<leader>xi", function() vim.cmd("VimtexInfo") end, desc = "Info de Depuración" },
+
     },
     triggers = {
         { "<leader>", mode = { "n", "v" } },

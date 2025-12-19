@@ -47,16 +47,20 @@ Plug 'tweekmonster/django-plus.vim'       " Soporte mejorado para Django
 Plug 'mattn/emmet-vim'                    " Emmet para HTML/CSS
 Plug 'ap/vim-css-color'                   " Mostrar colores CSS
 
-" ============ Quarto ============ 
+" ============ Latex =============
+Plug 'lervag/vimtex'             
+
+" ============ Quarto ============
 Plug 'quarto-dev/quarto-nvim'
 Plug 'Vigemus/iron.nvim'
 Plug 'jmbuhr/otter.nvim'
 
-" ============ Utilidades ============ 
+" ============ Utilidades ============
 Plug 'mbbill/undotree'                    " Historial de cambios
 Plug 'folke/which-key.nvim'               " Menú de atajos de teclado
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " Syntax highlighting mejorado
 Plug 'luochen1990/rainbow'                " Mejores brackets y delimitadores
+Plug 'NoahTheDuke/vim-just'               " Resaltado de sintaxis de justfile
 
 call plug#end()
 
