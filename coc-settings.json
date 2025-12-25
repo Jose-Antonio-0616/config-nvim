@@ -8,9 +8,10 @@
     "coc-emmet",
     "coc-ruff",
     "coc-pyright",
-    "coc-sh"
+    "coc-sh",
     "coc-prettier",
-    "coc-texlab"
+    "coc-texlab",
+    "coc-clangd"
   ],
 
   // --- Configuraciones de Sugerencias ---
@@ -94,6 +95,14 @@
     "javascript": "javascript",
     "htmldjango": "html"
   },
+
+  // --- C/C++ (PlatformIO / Clangd) ---
+  "clangd.enabled": true,
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=/home/jose/.platformio/packages/*/bin/*gcc*,/home/jose/.platformio/packages/*/bin/*g++*"
+  ],
+  "clangd.fallbackFlags": ["-std=c++17"]
 
   // --- JSON / SH ---
   "json.enable": true,

@@ -4,7 +4,9 @@
 
 " ============ Tema y Apariencia ============
 " Intentar cargar tema hyper, con fallback a default
+
 try
+    " let g:adwaita_darker = v:true
     colorscheme hyper
 catch
     " Fallback si hyper no está disponible
@@ -762,13 +764,13 @@ if not quarto_ok then
 end
 quarto.setup({
     lspFeatures = {
-        languages = { "python", "bash", "html" }, 
+        languages = { "python", "bash", "html" },
     },
     codeRunner = {
         enabled = true,
         default_method = "iron",
-        ft_runners = { 
-            quarto = "iron", 
+        ft_runners = {
+            quarto = "iron",
             python = "iron",
         },
         never_run = { "yaml"},
@@ -803,6 +805,16 @@ iron.setup({
 })
 
 EOF
+
+" ============ PlatformIO ============
+" Generar base de datos para CoC
+command! PioInitDB !pio run -t compiledb
+
+" Compilar y subir
+command! PioBuild Dispatch pio run
+command! PioUpload Dispatch pio run -t upload
+command! PioMonitor split | resize 15 | term pio device monitor
+command! PioClean Dispatch pio run -t clean
 
 " ============ Which-key (Menú de atajos) ============
 if has('nvim-0.5')
@@ -947,14 +959,14 @@ require("which-key").setup({
             end, desc = "Correr Selección"
         },
 
-        { 
-            "<leader>rr", function() 
+        {
+            "<leader>rr", function()
                 if vim.bo.filetype == 'quarto' then
                     vim.cmd("IronRepl python")
                 else
-                    vim.cmd("IronRepl") 
-                end 
-            end, desc = "Abrir/Cerrar REPL" 
+                    vim.cmd("IronRepl")
+                end
+            end, desc = "Abrir/Cerrar REPL"
         },
 
         -- Menú de Quarto -- NUEVO
@@ -971,7 +983,7 @@ require("which-key").setup({
         { "<leader><leader>j", "<Plug>(easymotion-j)", desc = "Line Down" },
         { "<leader><leader>k", "<Plug>(easymotion-k)", desc = "Line Up" },
         { "<leader><leader>/", "<Plug>(easymotion-sn)", desc = "Search" },
-    
+
         -- Menú de LaTeX
         { "<leader>x", group = "+ LaTeX" },
         { "<leader>xc", function() vim.cmd("VimtexCompile") end, desc = "Compilar (Toggle)" },
@@ -981,6 +993,13 @@ require("which-key").setup({
         { "<leader>xl", function() vim.cmd("VimtexClean") end, desc = "Limpiar Auxiliares" },
         { "<leader>xt", function() vim.cmd("VimtexTocToggle") end, desc = "Índice (TOC)" },
         { "<leader>xi", function() vim.cmd("VimtexInfo") end, desc = "Info de Depuración" },
+
+        -- Menu PlatformIO
+        { "<leader>m", group = "+ Microcontroladores" },
+        { "<leader>mb", function() vim.cmd("PioBuild") end, desc = "Compilar" },
+        { "<leader>mu", function() vim.cmd("PioUpload") end, desc = "Subir" },
+        { "<leader>mm", function() vim.cmd("PioMonitor") end, desc = "Monitor Serial" },
+        { "<leader>mi", function() vim.cmd("PioInitDB") end, desc = "Init DB (Autocompletado)" },
 
     },
     triggers = {

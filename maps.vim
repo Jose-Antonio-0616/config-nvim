@@ -197,6 +197,12 @@ nnoremap <leader>xl :VimtexClean<CR>
 nnoremap <leader>xt :VimtexTocToggle<CR>
 nnoremap <leader>xi :VimtexInfo<CR>
 
+" ============ PlatformIO ============
+nnoremap <leader>mi :PioInitDB<CR>
+nnoremap <leader>mb :PioBuild<CR>
+nnoremap <leader>mu :PioUpload<CR>
+nnoremap <leader>mm :PioMonitor<CR>
+
 " ============ Which-key (Menú de ayuda) ============
 " Mostrar menú de atajos
 nnoremap <leader>? :WhichKey<CR>

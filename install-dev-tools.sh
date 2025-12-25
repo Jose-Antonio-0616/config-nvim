@@ -71,7 +71,7 @@ if [ ! -f package.json ]; then
 fi
 
 # Instalar extensiones de CoC
-npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh coc-prettier coc-texlab
+npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh coc-prettier coc-texlab coc-clangd
 print_success "Extensiones de CoC instaladas"
 
 # Regresar al directorio original
