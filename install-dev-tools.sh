@@ -31,18 +31,18 @@ print_error() {
 
 # Actualizar sistema
 print_info "Actualizando sistema..."
-sudo apt update
+sudo nala update
 
 # ============ Python Development ============
 print_info "Instalando herramientas de Python..."
-sudo apt install -y python3 python3-pip python3-venv python3-dev
+sudo nala install -y python3 python3-pip python3-venv python3-dev
 
 # ============ Node.js y JavaScript ============
 print_info "Instalando Node.js y herramientas JavaScript..."
 # Verificar si Node.js ya está instalado
 if ! command -v node &> /dev/null; then
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo apt install -y nodejs
+    sudo nala install -y nodejs
 fi
 
 # Instalar LSPs y formateadores globales de Node.js
@@ -52,13 +52,13 @@ print_success "Node.js y herramientas JavaScript instaladas"
 # ============ Database Tools ============
 print_info "Instalando herramientas de base de datos..."
 # (psql client es útil para Django, incluso si se usa pgAdmin)
-sudo apt install -y postgresql-client
+sudo nala install -y postgresql-client
 print_success "Herramientas de base de datos instaladas"
 
 # ============ General Development Tools ============
 print_info "Instalando herramientas generales..."
 # (fzf es dependencia, ripgrep y fd-find son usados por FZF y CoC)
-sudo apt install -y curl wget git fzf ripgrep fd-find tree jq
+sudo nala install -y curl wget git fzf ripgrep fd-find tree jq clangd
 print_success "Herramientas generales instaladas"
 
 # ============ CoC Extensions ============

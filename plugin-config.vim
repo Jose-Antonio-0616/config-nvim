@@ -813,8 +813,17 @@ command! PioInitDB !pio run -t compiledb
 " Compilar y subir
 command! PioBuild Dispatch pio run
 command! PioUpload Dispatch pio run -t upload
-command! PioMonitor split | resize 15 | term pio device monitor
+command! PioMonitor vsplit | resize 15 | term pio device monitor
 command! PioClean Dispatch pio run -t clean
+
+" ============ MicroPython ============
+command! MpRun Dispatch uv run mpremote run %
+command! MpUpload Dispatch uv run mpremote cp % :%:t
+command! MpRepl vsplit | resize 15 | term uv run mpremote repl
+command! MpLs !uv run mpremote ls
+command! MpReset Dispatch uv run mpremote soft-reset
+" Uso :MpInstall umqtt.simple
+command! -nargs=1 MpInstall vsplit | term uv run mpremote mip install <args>
 
 " ============ Which-key (Menú de atajos) ============
 if has('nvim-0.5')
@@ -994,13 +1003,20 @@ require("which-key").setup({
         { "<leader>xt", function() vim.cmd("VimtexTocToggle") end, desc = "Índice (TOC)" },
         { "<leader>xi", function() vim.cmd("VimtexInfo") end, desc = "Info de Depuración" },
 
-        -- Menu PlatformIO
-        { "<leader>m", group = "+ Microcontroladores" },
+        -- Menu de PlatformIO
+        { "<leader>m", group = "+ PlatformIO" },
         { "<leader>mb", function() vim.cmd("PioBuild") end, desc = "Compilar" },
         { "<leader>mu", function() vim.cmd("PioUpload") end, desc = "Subir" },
         { "<leader>mm", function() vim.cmd("PioMonitor") end, desc = "Monitor Serial" },
         { "<leader>mi", function() vim.cmd("PioInitDB") end, desc = "Init DB (Autocompletado)" },
 
+        -- Menú de MicroPython
+        { "<leader>u", group = "+ MicroPython" },
+        { "<leader>ur", function() vim.cmd("MpRun") end, desc = "Ejecutar (RAM)" },
+        { "<leader>uu", function() vim.cmd("MpUpload") end, desc = "Subir Archivo" },
+        { "<leader>up", function() vim.cmd("MpRepl") end, desc = "Abrir REPL" },
+        { "<leader>ul", function() vim.cmd("MpLs") end, desc = "Listar Archivos" },
+        { "<leader>us", function() vim.cmd("MpReset") end, desc = "Soft Reset" },
     },
     triggers = {
         { "<leader>", mode = { "n", "v" } },

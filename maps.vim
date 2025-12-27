@@ -203,6 +203,12 @@ nnoremap <leader>mb :PioBuild<CR>
 nnoremap <leader>mu :PioUpload<CR>
 nnoremap <leader>mm :PioMonitor<CR>
 
+" ============ MicroPython ============
+nnoremap <leader>ur :MpRun<CR>
+nnoremap <leader>uu :MpUpload<CR>
+nnoremap <leader>up :MpRepl<CR>
+nnoremap <leader>ul :MpLs<CR>
+
 " ============ Which-key (Menú de ayuda) ============
 " Mostrar menú de atajos
 nnoremap <leader>? :WhichKey<CR>
