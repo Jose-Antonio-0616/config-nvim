@@ -1,0 +1,10 @@
+# Ignorar archivos Python para las estadísticas de lenguaje
+*.py linguist-vendored
+
+# Forzar que Lua sea detectado
+*.lua linguist-detectable=true
+
+# Forzar que Vimscript sea detectado
+*.vim linguist-detectable=true
+
+*.md linguist-documentation
