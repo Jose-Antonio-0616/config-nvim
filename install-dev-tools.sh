@@ -33,9 +33,20 @@ print_error() {
 print_info "Actualizando sistema..."
 sudo nala update
 
+# ============ General Development Tools ============
+print_info "Instalando herramientas generales..."
+# (fzf es dependencia, ripgrep y fd-find son usados por FZF y CoC)
+sudo nala install -y curl wget git fzf ripgrep fd-find tree jq clangd
+print_success "Herramientas generales instaladas"
+
 # ============ Python Development ============
 print_info "Instalando herramientas de Python..."
 sudo nala install -y python3 python3-pip python3-venv python3-dev
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# ============ LaTex ============
+print_info "Instalando herramientas de LaTex..."
+sudo nala install -y texlive-full latexmk zathura zathura-pdf-poppler xdotool
 
 # ============ Node.js y JavaScript ============
 print_info "Instalando Node.js y herramientas JavaScript..."
@@ -56,11 +67,6 @@ print_info "Instalando herramientas de base de datos..."
 sudo nala install -y postgresql-client
 print_success "Herramientas de base de datos instaladas"
 
-# ============ General Development Tools ============
-print_info "Instalando herramientas generales..."
-# (fzf es dependencia, ripgrep y fd-find son usados por FZF y CoC)
-sudo nala install -y curl wget git fzf ripgrep fd-find tree jq clangd
-print_success "Herramientas generales instaladas"
 
 # ============ CoC Extensions ============
 print_info "Instalando extensiones de CoC..."
@@ -72,7 +78,8 @@ if [ ! -f package.json ]; then
 fi
 
 # Instalar extensiones de CoC
-npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh coc-prettier coc-texlab coc-clangd
+npm install coc-html coc-css coc-tailwindcss coc-json coc-tsserver coc-emmet @yaegassy/coc-ruff coc-pyright coc-sh coc-prettier coc-texlab coc-clangd coc-texlab
+sudo nala install -y
 print_success "Extensiones de CoC instaladas"
 
 # Regresar al directorio original
