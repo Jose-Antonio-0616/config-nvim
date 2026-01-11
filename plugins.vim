@@ -48,6 +48,7 @@ Plug 'tweekmonster/django-plus.vim'       " Soporte mejorado para Django
 " ============ Web Development ============
 Plug 'mattn/emmet-vim'                    " Emmet para HTML/CSS
 Plug 'ap/vim-css-color'                   " Mostrar colores CSS
+Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'} " Mostrar logs JS
 
 " ============ Latex =============
 Plug 'lervag/vimtex'

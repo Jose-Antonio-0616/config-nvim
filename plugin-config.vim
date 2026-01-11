@@ -735,6 +735,30 @@ let g:user_emmet_mode='inv'  " habilitar en todos los modos
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,javascript,typescript EmmetInstall
 
+" ============ Configuración Sniprun (JS/TS) ============
+if has('nvim-0.5')
+    lua << EOF
+require('sniprun').setup({
+    display = {
+        "Terminal",
+    },
+    display_options = {
+        terminal_scrollback = vim.o.scrollback,
+        terminal_line_number = false,
+        terminal_signcolumn = false,
+        terminal_position = 'vertical',
+        terminal_width = 45,
+        terminal_height = 20
+    },
+    live_mode_toggle = 'off',
+
+    -- Configuración específica para JS/TS
+    selected_interpreters = {"JS_TS_deno"},
+    repl_enable = { "JS_TS_deno" },
+})
+EOF
+end
+
 " Clang-format
 let g:clang_format#auto_format = 0
 let g:clang_format#auto_format_on_insert_leave = 0
@@ -978,7 +1002,7 @@ require("which-key").setup({
             end, desc = "Abrir/Cerrar REPL"
         },
 
-        -- Menú de Quarto -- NUEVO
+        -- Menú de Quarto
         { "<leader>p", group = "+ Quarto" },
         { "<leader>pp", function() vim.cmd("QuartoPreview") end, desc = "Previsualizar Quarto" },
         { "<leader>ps", function() vim.cmd("QuartoClosePreview") end, desc = "Detener Preview" },
@@ -992,6 +1016,12 @@ require("which-key").setup({
         { "<leader><leader>j", "<Plug>(easymotion-j)", desc = "Line Down" },
         { "<leader><leader>k", "<Plug>(easymotion-k)", desc = "Line Up" },
         { "<leader><leader>/", "<Plug>(easymotion-sn)", desc = "Search" },
+
+        -- Menú Sniprun
+        { "<leader>j", group = "+ Sniprun" },
+        { "<leader>jr", function() vim.cmd("SnipRun") end, desc = "SnipRun (Línea/Selec)" },
+        { "<leader>jc", function() vim.cmd("SnipClose") end, desc = "Limpiar Logs" },
+        { "<leader>jf", function() vim.cmd("%SnipRun") end, desc = "Ejecutar Archivo" },
 
         -- Menú de LaTeX
         { "<leader>x", group = "+ LaTeX" },

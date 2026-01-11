@@ -47,6 +47,7 @@ fi
 
 # Instalar LSPs y formateadores globales de Node.js
 sudo npm install -g typescript eslint prettier @tailwindcss/language-server bash-language-server
+curl -fsSL https://deno.land/x/install/install.sh | sh
 print_success "Node.js y herramientas JavaScript instaladas"
 
 # ============ Database Tools ============

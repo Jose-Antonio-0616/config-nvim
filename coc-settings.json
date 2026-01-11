@@ -100,7 +100,9 @@
   "clangd.enabled": true,
   "clangd.arguments": [
     "--background-index",
-    "--query-driver=/home/jose/.platformio/packages/*/bin/*gcc*,/home/jose/.platformio/packages/*/bin/*g++*"
+    "--query-driver=/home/jose/.platformio/packages/toolchain-*/bin/*gcc*,/home/jose/.platformio/packages/toolchain-*/bin/*g++*",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed"
   ],
   "clangd.fallbackFlags": ["-std=c++17"]
 

@@ -150,14 +150,24 @@ map <leader><leader>/ <Plug>(easymotion-sn)
 
 " ============ Desarrollo Web ============
 " Emmet
-imap <C-y>, <plug>(emmet-expand-abbr)
-imap <C-y>; <plug>(emmet-expand-word)
-imap <C-y>u <plug>(emmet-update-tag)
-imap <C-y>d <plug>(emmet-balance-tag-inward)
-imap <C-y>D <plug>(emmet-balance-tag-outward)
+imap <C-y>, <Plug>(emmet-expand-abbr)
+imap <C-y>; <Plug>(emmet-expand-word)
+imap <C-y>u <Plug>(emmet-update-tag)
+imap <C-y>d <Plug>(emmet-balance-tag-inward)
+imap <C-y>D <Plug>(emmet-balance-tag-outward)
 
 " HTML tags
 nnoremap <leader>ht :set filetype=html<CR>
+
+" ============ Sniprun ============
+" Ejecutar la línea actual
+nnoremap <leader>jr :SnipRun<CR>
+" Ejecutar lo que se tenga seleccionado
+vnoremap <leader>s :SnipRun<CR>
+" Limpiar los mensajes virtuales (Borrar los logs de la pantalla)
+nnoremap <leader>jc :SnipClose<CR>
+" Ejecutar todo el archivo actual
+nnoremap <leader>jf :%SnipRun<CR>
 
 " ============ Layout de Desarrollo ============
 " Layout 'dev'
