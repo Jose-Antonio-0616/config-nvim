@@ -6,12 +6,12 @@
 set encoding=utf-8              " Codificación UTF-8
 set fileencoding=utf-8          " Codificación de archivos
 set mouse=a                     " Habilitar mouse
-set clipboard+=unnamedplus       " Usar clipboard del sistema
+set clipboard+=unnamedplus      " Usar clipboard del sistema
 set updatetime=300              " Tiempo de actualización más rápido
 set timeoutlen=500              " Tiempo de espera para mapeos
 
 " ============ Interfaz ============
-set number                      " Mostrar números de línea
+" set number                      " Mostrar números de línea
 set relativenumber              " Números de línea relativos
 set cursorline                  " Resaltar línea actual
 set showmatch                   " Mostrar paréntesis coincidentes

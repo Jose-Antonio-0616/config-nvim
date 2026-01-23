@@ -72,7 +72,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Renombrar símbolo
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>cn <Plug>(coc-rename)
 
 " Formatear código seleccionado
 xmap <leader>f <Plug>(coc-format-selected)
@@ -111,7 +111,7 @@ nnoremap <C-d> :copy .<CR>
 nnoremap <C-a> ggVG
 
 " Buscar y reemplazar
-nnoremap <leader>s :%s//gc<left><left><left>
+nnoremap <leader>s :%s//gc
 
 " Limpiar resaltado de búsqueda
 nnoremap <leader>c :nohlsearch<CR>
@@ -159,15 +159,9 @@ imap <C-y>D <Plug>(emmet-balance-tag-outward)
 " HTML tags
 nnoremap <leader>ht :set filetype=html<CR>
 
-" ============ Sniprun ============
-" Ejecutar la línea actual
-nnoremap <leader>jr :SnipRun<CR>
-" Ejecutar lo que se tenga seleccionado
-vnoremap <leader>s :SnipRun<CR>
-" Limpiar los mensajes virtuales (Borrar los logs de la pantalla)
-nnoremap <leader>jc :SnipClose<CR>
-" Ejecutar todo el archivo actual
-nnoremap <leader>jf :%SnipRun<CR>
+" LiveServer
+nnoremap <leader>nr :LiveServer<CR>
+nnoremap <Leader>ns :LiveServerStop<CR>
 
 " ============ Layout de Desarrollo ============
 " Layout 'dev'
@@ -192,11 +186,23 @@ nnoremap <leader>ls :call SaveCustomLayout()<CR>
 nnoremap <leader>ll :call LoadCustomLayout()<CR>
 nnoremap <leader>lm :call ManageCustomLayouts()<CR>
 
-" ============ Quarto y REPL (Iron) ============
-" Nuevo grupo <leader>p (Quarto)
+" ============ Quarto y REPL ============
 nnoremap <leader>pp <Cmd>QuartoPreview<CR>     " Previsualizar Quarto
 nnoremap <leader>ps <Cmd>QuartoClosePreview<CR> " Detener Previsualización
 nnoremap <leader>pr <Cmd>QuartoRender<CR>      " Renderizar Quarto
+
+" ============ Iron ============
+nnoremap <leader>rr :IronRepl<CR>
+nnoremap <leader>rl <Cmd>lua require('iron.core').send_line()<CR>
+vnoremap <leader>ri <Cmd>lua require('iron.core').visual_send()<CR>
+nnoremap <leader>rb <Cmd>lua require('iron.core').send_code_block()<CR>
+nnoremap <leader>rk <Cmd>lua require('iron.core').send(nil, string.char(12))<CR>
+
+" ============ Sniprun ============
+nnoremap <leader>rf :%SnipRun<CR>
+vnoremap <leader>rs :SnipRun<CR>
+nnoremap <leader>rs :SnipRun<CR>
+nnoremap <leader>rc :SnipClose<CR>
 
 " ============ LaTeX (VimTex) ============
 nnoremap <leader>xc :VimtexCompile<CR>

@@ -5,16 +5,80 @@
 " ============ Tema y Apariencia ============
 " Intentar cargar tema hyper, con fallback a default
 
-try
-    " let g:adwaita_darker = v:true
-    colorscheme hyper
-catch
-    " Fallback si hyper no está disponible
-    colorscheme default
-    " Aplicar algunos colores básicos
-    highlight CursorLine ctermbg=235 guibg=#2c2c2c
-    highlight LineNr ctermfg=grey guifg=#5c6370
-endtry
+lua << EOF
+local onedarkpro = require("onedarkpro")
+
+onedarkpro.setup({
+    -- Forzamos que use tus colores exactos
+    colors = {
+        -- 1. Fondo y Texto
+        bg = "#000000", -- Negro Puro (Identidad Autumn)
+        fg = "#a5a5a5", -- Gris Texto
+
+        -- 2. Rotación de Colores (Aquí está el truco de ingeniería)
+        -- OneDark espera 'purple' para keywords -> Le damos tu ROSA (#ff6ec0)
+        purple = "#ff6ec0",
+
+        -- OneDark espera 'blue' para funciones -> Le damos tu VIOLETA (#c55eff)
+        blue = "#c55eff",
+
+        -- OneDark espera 'yellow' para Tipos/Clases -> Le damos tu AZUL (#00abff)
+        yellow = "#00abff",
+
+        -- OneDark espera 'red' para Variables/Tags -> Le damos tu ROJO SALMÓN (#ff5866)
+        red = "#ff5866",
+
+        -- OneDark espera 'green' para Strings -> Le damos tu LIMA (#afff76)
+        green = "#afff76",
+
+        -- OneDark espera 'cyan' para Operadores -> Le damos tu TEAL (#55baa2)
+        cyan = "#55baa2",
+
+        -- Naranja se mantiene igual (Números/Constantes)
+        orange = "#ff9939",
+    },
+
+    -- 3. Estilos: Activamos Negrita (Bold) para lograr el efecto NEÓN
+    styles = {
+        types = "bold",
+        methods = "bold",
+        functions = "bold",
+        keywords = "bold",
+        virtual_text = "italic",
+        comments = "italic",
+    },
+
+    -- 4. Correcciones Específicas (Overrides)
+    highlights = {
+        -- HTML: Forzamos que los tags sean del color 'red' (que ahora es tu Salmón)
+        ["@tag"] = { fg = "${red}", style = "bold" },
+        ["@tag.attribute"] = { fg = "${orange}" },
+        ["@tag.delimiter"] = { fg = "#5a5a5a" }, -- Gris oscuro para < >
+
+        -- CSS: Propiedades en Cyan (Tu Teal)
+        ["@property"] = { fg = "${cyan}" },
+
+        -- LaTeX: Limpiamos el ruido visual
+        ["@text.environment"] = { fg = "${purple}", style = "bold" }, -- \begin \end (Tu Rosa)
+        ["@function.macro"] = { fg = "${yellow}" }, -- Comandos generales (Tu Azul)
+
+        -- JS/TS: Ajuste de variables
+        ["@variable"] = { fg = "${fg}" }, -- Variables normales en gris (menos ruido)
+        ["@variable.builtin"] = { fg = "${yellow}", style = "bold" }, -- this/self en Azul
+    },
+
+    options = {
+        bold = true, -- Permitir negritas globales
+        italic = true,
+        underline = true,
+        cursorline = true,
+        transparency = false, -- Fondo negro sólido
+    }
+})
+
+-- Aplicar el tema
+vim.cmd("colorscheme onedark_dark")
+EOF
 
 set background=dark
 highlight CursorLine guibg=#0f0f0f guifg=NONE
@@ -735,6 +799,9 @@ let g:user_emmet_mode='inv'  " habilitar en todos los modos
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,javascript,typescript EmmetInstall
 
+command! LiveServer echo "🚀 Iniciando Live Server..." | call jobstart('live-server --open=' . expand('%'))
+command! LiveServerStop call system('pkill -f live-server') | echo "🛑 Servidor detenido."
+
 " ============ Configuración Sniprun (JS/TS) ============
 if has('nvim-0.5')
     lua << EOF
@@ -747,12 +814,9 @@ require('sniprun').setup({
         terminal_line_number = false,
         terminal_signcolumn = false,
         terminal_position = 'vertical',
-        terminal_width = 45,
+        terminal_width = 50,
         terminal_height = 20
     },
-    live_mode_toggle = 'off',
-
-    -- Configuración específica para JS/TS
     selected_interpreters = {"JS_TS_deno"},
     repl_enable = { "JS_TS_deno" },
 })
@@ -811,7 +875,7 @@ iron.setup({
         scratch_repl   = true,
         repl_definition = {
             python = {
-                command = { "ipython", "--no-autoindent" },
+                command = { "python3", "ipython", "--no-autoindent" },
                 format = require("iron.fts.common").brackets_paste_python,
                 block_dividers = { "# %%", "#%%"},
             },
@@ -819,11 +883,20 @@ iron.setup({
                 command = { "ipython", "--no-autoindent" },
                 format = require("iron.fts.common").brackets_paste_python,
                 block_dividers = { "# %%", "#%%", "```", "```{python}"},
+            },
+            javascript = {
+                command = { "node" },
+                block_dividers = { "//" },
+            },
+            typescript = {
+                command = { "deno" },
+                block_dividers = { "//" }
             }
         },
         repl_filetype = function(bufnr, ft) return ft end,
         dap_integration = true,
-        repl_open_cmd = require("iron.view").split.vertical.rightbelow("%50"),
+        repl_open_cmd = require("iron.view").split.vertical.rightbelow("%40"),
+        highlight = { italic = true },
         ignore_blank_lines = true,
     },
 })
@@ -867,7 +940,7 @@ require("which-key").setup({
         { "<leader>wq", function() vim.cmd("wq") end, desc = "Guardar y Salir" },
         { "<leader>?", function() vim.cmd("WhichKey") end, desc = "Ayuda" },
         { "<leader>ht", function() vim.bo.filetype = "html" end, desc = "HTML" },
-        { "<leader>rn", "<Plug>(coc-rename)", desc = "Renombrar" },
+        { "<leader>cn", "<Plug>(coc-rename)", desc = "Renombrar" },
 
         -- Arreglo para $MYVIMRC (Vim var -> Lua)
         {
@@ -879,7 +952,7 @@ require("which-key").setup({
         -- Arreglo para <left><left><left> (enviar teclas)
         {
         "<leader>s",
-        function() vim.fn.feedkeys(":%s//gc<Left><Left><Left>") end,
+        function() vim.fn.feedkeys(":%s//gc") end,
         desc = "Buscar/Reemplazar"
         },
 
@@ -945,62 +1018,23 @@ require("which-key").setup({
         { "<leader>ll", function() vim.cmd("call LoadCustomLayout()") end, desc = "Cargar Custom" },
         { "<leader>lm", function() vim.cmd("call ManageCustomLayouts()") end, desc = "Gestionar Custom" },
 
-        -- MenÚ de Ejecución (Run)
+        -- Menú de Ejecución (Run)
         { "<leader>r", group = "+ Ejecutar (Run)" },
         { "<leader>r1", function() vim.cmd("call RunInTerminal(vim.fn.input('Comando T1: '), 1)") end, desc = "Run T1" },
         { "<leader>r2", function() vim.cmd("call RunInTerminal(vim.fn.input('Comando T2: '), 2)") end, desc = "Run T2" },
 
-        {
-            "<leader>rl",function()
-                if vim.bo.filetype == 'quarto' then
-                    require("quarto.runner").run_line()
-                else
-                    require("iron.core").send_line()
-                end
-            end, desc = "Correr Línea"
-        },
+        -- Iron
+        { "<leader>rr", function() vim.cmd("IronRepl") end, desc = "Abrir/Cerrar REPL" },
+        { "<leader>ri", mode = 'v', function() require("iron.core").visual_send() end, desc = "Correr Selección (Iron)" },
+        { "<leader>rl", function() require("iron.core").send_line() end, desc = "Correr Línea (Iron)" },
+        { "<leader>rb", function() require("iron.core").send_code_block() end, desc = "Correr Celda/Bloque (Iron)" },
+        { "<leader>rk", function() require("iron.core").send(nil, string.char(12)) end, desc = "Limpiar REPL (Iron)" },
 
-        {
-            "<leader>rb", function()
-                if vim.bo.filetype == 'quarto' then
-                    require("quarto.runner").run_cell()
-                else
-                    require("iron.core").send_code_block()
-                end
-            end, desc = "Correr Celda/Bloque"
-        },
-
-        {
-            "<leader>rn", function()
-                if vim.bo.filetype == 'quarto' then
-                    require("quarto.runner").run_cell()
-                    vim.cmd("QuartoCellNext")
-                else
-                    require("iron.core").send_code_block_and_move()
-                end
-            end, desc = "Correr Bloque y Avanzar"
-        },
-
-        {
-            "<leader>r", mode = 'v',
-            function()
-                if vim.bo.filetype == 'quarto' then
-                    require("quarto.runner").run_range()
-                else
-                    require("iron.core").send_visual()
-                end
-            end, desc = "Correr Selección"
-        },
-
-        {
-            "<leader>rr", function()
-                if vim.bo.filetype == 'quarto' then
-                    vim.cmd("IronRepl python")
-                else
-                    vim.cmd("IronRepl")
-                end
-            end, desc = "Abrir/Cerrar REPL"
-        },
+        -- SnipRun
+        { "<leader>rs", mode = 'v', function() vim.cmd("SnipRun") end, desc = "Correr Selección (SnipRun)" },
+        { "<leader>rs", function() vim.cmd("SnipRun") end, desc = "Correr Linea (SnipRun)" },
+        { "<leader>rc", function() vim.cmd("SnipClose") end, desc = "Limpiar Logs (SnipRun)" },
+        { "<leader>rf", function() vim.cmd("%SnipRun") end, desc = "Ejecutar Archivo (SnipRun)" },
 
         -- Menú de Quarto
         { "<leader>p", group = "+ Quarto" },
@@ -1017,11 +1051,10 @@ require("which-key").setup({
         { "<leader><leader>k", "<Plug>(easymotion-k)", desc = "Line Up" },
         { "<leader><leader>/", "<Plug>(easymotion-sn)", desc = "Search" },
 
-        -- Menú Sniprun
-        { "<leader>j", group = "+ Sniprun" },
-        { "<leader>jr", function() vim.cmd("SnipRun") end, desc = "SnipRun (Línea/Selec)" },
-        { "<leader>jc", function() vim.cmd("SnipClose") end, desc = "Limpiar Logs" },
-        { "<leader>jf", function() vim.cmd("%SnipRun") end, desc = "Ejecutar Archivo" },
+        -- Menú de LiveServer
+        { "<leader>n", group = "+ LiveServer" },
+        { "<leader>nr", function() vim.cmd("LiveServer") end, desc = "Iniciar Servidor" },
+        { "<leader>ns", function() vim.cmd("LiveServerStop") end, desc = "Detener Servidor" },
 
         -- Menú de LaTeX
         { "<leader>x", group = "+ LaTeX" },

@@ -14,7 +14,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 " ============ Temas y Apariencia ============
 Plug 'paulo-granthon/hyper.nvim'          " Tema hyper
 Plug 'olimorris/onedarkpro.nvim'          " Tema onedarkpro
-Plug 'polirritmico/monokai-nightasty.nvim'
 Plug 'vim-airline/vim-airline'            " Barra de estado
 Plug 'vim-airline/vim-airline-themes'     " Temas para airline
 Plug 'nvim-tree/nvim-web-devicons'        " Iconos web para Neovim
@@ -48,15 +47,15 @@ Plug 'tweekmonster/django-plus.vim'       " Soporte mejorado para Django
 " ============ Web Development ============
 Plug 'mattn/emmet-vim'                    " Emmet para HTML/CSS
 Plug 'ap/vim-css-color'                   " Mostrar colores CSS
-Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'} " Mostrar logs JS
 
 " ============ Latex =============
 Plug 'lervag/vimtex'
 
-" ============ Quarto ============
+" ============ Quarto/Iron/Sniprun ============
 Plug 'quarto-dev/quarto-nvim'
 Plug 'Vigemus/iron.nvim'
 Plug 'jmbuhr/otter.nvim'
+Plug 'michaelb/sniprun', {'do': 'sh ./install.sh'} " Ejecutar logs JS
 
 " ============ PlatformIO ============
 Plug 'tpope/vim-dispatch'               " Ejecución asíncrona
