@@ -9,79 +9,87 @@ lua << EOF
 local onedarkpro = require("onedarkpro")
 
 onedarkpro.setup({
-    -- Forzamos que use tus colores exactos
+    -- Forzamos la paleta de Nightbow
     colors = {
-        -- 1. Fondo y Texto
-        bg = "#000000", -- Negro Puro (Identidad Autumn)
-        fg = "#a5a5a5", -- Gris Texto
+        -- 1. Base
+        bg = "#000000",       -- Negro Puro (Nightbow signature)
+        fg = "#E0E0EE",       -- Blanco Hielo (Texto base)
 
-        -- 2. Rotación de Colores (Aquí está el truco de ingeniería)
-        -- OneDark espera 'purple' para keywords -> Le damos tu ROSA (#ff6ec0)
-        purple = "#ff6ec0",
+        -- 2. Colores de Sintaxis (Extrados de Nightbow.tmTheme)
+        -- Variables y Tags HTML
+        red = "#FF5A70",      -- Salmón Brillante
 
-        -- OneDark espera 'blue' para funciones -> Le damos tu VIOLETA (#c55eff)
-        blue = "#c55eff",
+        -- Strings
+        green = "#47FD75",    -- Verde Radioactivo
 
-        -- OneDark espera 'yellow' para Tipos/Clases -> Le damos tu AZUL (#00abff)
-        yellow = "#00abff",
+        -- Clases, Tipos, Números y Constantes
+        yellow = "#FAC42F",   -- Oro / Naranja
+        orange = "#FAC42F",   -- (Mismo tono dorado para consistencia)
 
-        -- OneDark espera 'red' para Variables/Tags -> Le damos tu ROJO SALMÓN (#ff5866)
-        red = "#ff5866",
+        -- Funciones, Bordes y Foco
+        blue = "#1688F0",     -- Azul Eléctrico (El color principal del tema)
 
-        -- OneDark espera 'green' para Strings -> Le damos tu LIMA (#afff76)
-        green = "#afff76",
+        -- Keywords (if, else, return, import)
+        purple = "#BB8AFF",   -- Lavanda
 
-        -- OneDark espera 'cyan' para Operadores -> Le damos tu TEAL (#55baa2)
-        cyan = "#55baa2",
-
-        -- Naranja se mantiene igual (Números/Constantes)
-        orange = "#ff9939",
+        -- Operadores y Caracteres Especiales
+        cyan = "#39A6FF",     -- Azul Cielo (Más claro que el azul principal)
     },
 
-    -- 3. Estilos: Activamos Negrita (Bold) para lograr el efecto NEÓN
+    -- 3. Estilos: Activamos Negrita para el "Pop" visual
     styles = {
         types = "bold",
         methods = "bold",
         functions = "bold",
-        keywords = "bold",
+        keywords = "bold",       -- Las keywords Lavanda se verán increíbles en negrita
         virtual_text = "italic",
         comments = "italic",
     },
 
-    -- 4. Correcciones Específicas (Overrides)
+    -- 4. Ajustes Finos (Overrides) para mantener tu flujo de trabajo
     highlights = {
-        -- HTML: Forzamos que los tags sean del color 'red' (que ahora es tu Salmón)
+        -- HTML: Tags Salmón, Atributos Dorados
         ["@tag"] = { fg = "${red}", style = "bold" },
-        ["@tag.attribute"] = { fg = "${orange}" },
-        ["@tag.delimiter"] = { fg = "#5a5a5a" }, -- Gris oscuro para < >
+        ["@tag.attribute"] = { fg = "${yellow}" },
+        ["@tag.delimiter"] = { fg = "#5C6370" }, -- Gris para < > (Menos ruido)
 
-        -- CSS: Propiedades en Cyan (Tu Teal)
+        -- CSS: Usamos el Azul Cielo (Cyan) para propiedades para que resalten sobre el negro
+        -- (Nightbow original usa gris, pero es muy aburrido para un editor de terminal)
         ["@property"] = { fg = "${cyan}" },
 
-        -- LaTeX: Limpiamos el ruido visual
-        ["@text.environment"] = { fg = "${purple}", style = "bold" }, -- \begin \end (Tu Rosa)
-        ["@function.macro"] = { fg = "${yellow}" }, -- Comandos generales (Tu Azul)
+        -- LaTeX: Estructura Lavanda, Comandos Azul Eléctrico
+        ["@text.environment"] = { fg = "${purple}", style = "bold" }, -- \begin \end
+        ["@function.macro"] = { fg = "${blue}" }, -- Comandos generales
 
-        -- JS/TS: Ajuste de variables
-        ["@variable"] = { fg = "${fg}" }, -- Variables normales en gris (menos ruido)
-        ["@variable.builtin"] = { fg = "${yellow}", style = "bold" }, -- this/self en Azul
+        -- JS/TS/Python: Variables Salmón vs Control Lavanda
+        ["@variable"] = { fg = "${red}" },             -- Variables Salmón
+        ["@variable.parameter"] = { fg = "${fg}" },    -- Parámetros Blancos (Limpieza)
+        ["@variable.builtin"] = { fg = "${blue}", style = "bold" }, -- this/self Azul
+        ["@keyword.function"] = { fg = "${purple}", style = "bold" }, -- function/def
+
+        -- UI: Bordes y Menús en Azul Eléctrico (Identidad Nightbow JSON)
+        ["FloatBorder"] = { fg = "${blue}" },
+        ["VertSplit"] = { fg = "${blue}" },
+        ["CursorLineNr"] = { fg = "${blue}", style = "bold" },
+        ["PmenuSel"] = { bg = "${blue}", fg = "#ffffff", style = "bold" },
+        ["MatchParen"] = { fg = "${green}", style = "bold", underline = true },
     },
 
     options = {
-        bold = true, -- Permitir negritas globales
+        bold = true,
         italic = true,
         underline = true,
         cursorline = true,
-        transparency = false, -- Fondo negro sólido
+        transparency = false, -- Fondo sólido
     }
 })
 
 -- Aplicar el tema
-vim.cmd("colorscheme onedark_dark")
+vim.cmd("colorscheme onedark")
 EOF
 
 set background=dark
-highlight CursorLine guibg=#0f0f0f guifg=NONE
+highlight CursorLine guibg=#101010 guifg=NONE
 
 " Configuración de Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -875,14 +883,14 @@ iron.setup({
         scratch_repl   = true,
         repl_definition = {
             python = {
-                command = { "python3", "ipython", "--no-autoindent" },
-                format = require("iron.fts.common").brackets_paste_python,
-                block_dividers = { "# %%", "#%%"},
+                command = { "python3" },
+                format = require("iron.fts.common").bracketed_paste_python,
+                block_dividers = { "#", "# %%", "#%%"},
             },
             quarto = {
                 command = { "ipython", "--no-autoindent" },
-                format = require("iron.fts.common").brackets_paste_python,
-                block_dividers = { "# %%", "#%%", "```", "```{python}"},
+                format = require("iron.fts.common").bracketed_paste_python,
+                block_dividers = {"#", "# %%", "#%%", "```", "```{python}"},
             },
             javascript = {
                 command = { "node" },
@@ -1024,11 +1032,12 @@ require("which-key").setup({
         { "<leader>r2", function() vim.cmd("call RunInTerminal(vim.fn.input('Comando T2: '), 2)") end, desc = "Run T2" },
 
         -- Iron
-        { "<leader>rr", function() vim.cmd("IronRepl") end, desc = "Abrir/Cerrar REPL" },
+        { "<leader>rr", function() vim.cmd("IronRepl") end, desc = "Abrir/Cerar REPL" },
         { "<leader>ri", mode = 'v', function() require("iron.core").visual_send() end, desc = "Correr Selección (Iron)" },
         { "<leader>rl", function() require("iron.core").send_line() end, desc = "Correr Línea (Iron)" },
         { "<leader>rb", function() require("iron.core").send_code_block() end, desc = "Correr Celda/Bloque (Iron)" },
         { "<leader>rk", function() require("iron.core").send(nil, string.char(12)) end, desc = "Limpiar REPL (Iron)" },
+        { "<leader>rR", function() vim.cmd("IronRestart") end, desc = "Reset REPL" },
 
         -- SnipRun
         { "<leader>rs", mode = 'v', function() vim.cmd("SnipRun") end, desc = "Correr Selección (SnipRun)" },

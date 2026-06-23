@@ -197,6 +197,7 @@ nnoremap <leader>rl <Cmd>lua require('iron.core').send_line()<CR>
 vnoremap <leader>ri <Cmd>lua require('iron.core').visual_send()<CR>
 nnoremap <leader>rb <Cmd>lua require('iron.core').send_code_block()<CR>
 nnoremap <leader>rk <Cmd>lua require('iron.core').send(nil, string.char(12))<CR>
+nnoremap <leader>rR :IronRestart<CR>
 
 " ============ Sniprun ============
 nnoremap <leader>rf :%SnipRun<CR>
